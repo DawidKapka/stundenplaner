@@ -8,7 +8,7 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class SchoolModule implements AbstractModel {
+public class SchoolModule extends AbstractModel {
     private String moduleName;
     private LessonDuration duration;
 }

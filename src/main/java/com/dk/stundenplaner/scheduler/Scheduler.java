@@ -14,7 +14,8 @@ public class Scheduler {
         final List<SchoolModule> modules = JsonReader.readModules();
         final List<SchoolClass> classes = JsonReader.readClasses();
         final List<Teacher> teachers = JsonReader.readTeachers();
-        runAlgorithm(schedule, modules, classes, teachers);
+        final List<Room> rooms = JsonReader.readRooms();
+        runAlgorithm(schedule, modules, classes, teachers, rooms);
     }
 
     private List<ScheduleEntry> createEmptyWeekSchedule() {
@@ -31,8 +32,8 @@ public class Scheduler {
         return schedule;
     }
 
-    private void runAlgorithm(List<ScheduleEntry> schedule, List<SchoolModule> modules, List<SchoolClass> classes, List<Teacher> teachers) {
-        final AlgorithmRunner runner = new AlgorithmRunner(classes, modules, teachers, schedule);
+    private void runAlgorithm(List<ScheduleEntry> schedule, List<SchoolModule> modules, List<SchoolClass> classes, List<Teacher> teachers, List<Room> rooms) {
+        final AlgorithmRunner runner = new AlgorithmRunner(classes, modules, teachers, schedule, rooms);
         runner.run();
     }
 }

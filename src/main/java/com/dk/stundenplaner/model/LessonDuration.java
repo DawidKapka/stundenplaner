@@ -2,7 +2,8 @@ package com.dk.stundenplaner.model;
 
 public enum LessonDuration {
     SINGLE(1),
-    DOUBLE(2);
+    DOUBLE(2),
+    TRIPLE(3);
 
     private int length;
 

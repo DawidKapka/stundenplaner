@@ -13,7 +13,9 @@ public class MapAvailableDaysToClassStep {
     public static Map<SchoolClass, List<Weekday>> map(List<SchoolClass> classes) {
         final Map<SchoolClass, List<Weekday>> availableDaysForClass = new HashMap<>();
         classes.forEach(schoolClass -> {
-            final List<Weekday> availableDays = Arrays.stream(Weekday.values()).filter(day -> !schoolClass.getDaysUnavailable().contains(day)).toList();
+            final List<Weekday> availableDays = Arrays.stream(Weekday.values())
+                    .filter(day -> !schoolClass.getDaysUnavailable().contains(day))
+                    .toList();
             availableDaysForClass.put(schoolClass, availableDays);
         });
         return availableDaysForClass;

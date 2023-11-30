@@ -1,4 +1,4 @@
 package com.dk.stundenplaner.model;
 
-public interface AbstractModel {
+public abstract class AbstractModel {
 }

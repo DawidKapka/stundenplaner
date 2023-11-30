@@ -12,7 +12,7 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class Teacher implements AbstractModel {
+public class Teacher extends AbstractModel {
     private String firstname;
     private String lastname;
     private String shortcut;

@@ -8,9 +8,10 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class ScheduleEntry implements AbstractModel {
+public class ScheduleEntry extends AbstractModel {
     private SchoolModule module;
     private Teacher teacher;
     private SchoolClass assignedSchoolClass;
     private Weekday weekday;
+    private Room room;
 }
