@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application PUBLIC "-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN"
+        "http://java.sun.com/dtd/application_1_3.dtd">
+<application id="Application_ID">
+    <display-name>Stundenplaner</display-name>
+    <description>Stundenplaner</description>
+    <module id="WebModule_1">
+        <web>
+            <web-uri>stundenplaner-api.war</web-uri>
+            <context-root>/api</context-root>
+        </web>
+    </module>
+</application>
