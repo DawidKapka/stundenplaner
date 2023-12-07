@@ -2,12 +2,18 @@ package com.dk.stundenplaner.scheduler;
 
 import com.dk.stundenplaner.algorithm.AlgorithmRunner;
 import com.dk.stundenplaner.model.*;
+import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@ApplicationScoped
 public class Scheduler {
+
+    public String test() {
+        return "Test";
+    }
 
     public void createSchedule() {
         final List<ScheduleEntry> schedule = createEmptyWeekSchedule();
