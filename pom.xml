@@ -12,6 +12,7 @@
         <module>stundenplaner-ejb</module>
         <module>stundenplaner-ui</module>
         <module>stundenplaner-api</module>
+        <module>stundenplaner-ear</module>
     </modules>
 
     <properties>
@@ -31,6 +32,11 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>2.15.2</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.ws.rs</groupId>
+                <artifactId>jakarta.ws.rs-api</artifactId>
+                <version>3.1.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
