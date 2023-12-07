@@ -1,0 +1,149 @@
+[
+  {
+    "firstname": "Peter",
+    "lastname": "Nussbaumer",
+    "shortcut": "pnu",
+    "pensum": 60,
+    "availableDays": [
+      "MONDAY_MORNING",
+      "MONDAY_AFTERNOON",
+      "TUESDAY_MORNING",
+      "TUESDAY_AFTERNOON",
+      "WEDNESDAY_MORNING",
+      "WEDNESDAY_AFTERNOON"
+    ],
+    "modules": [
+      "M200",
+      "M201",
+      "M202",
+      "M203",
+      "M100"
+    ]
+  },
+  {
+    "firstname": "Alfred",
+    "lastname": "Kaufmann",
+    "shortcut": "aka",
+    "pensum": 100,
+    "availableDays": [
+      "MONDAY_MORNING",
+      "MONDAY_AFTERNOON",
+      "TUESDAY_MORNING",
+      "TUESDAY_AFTERNOON",
+      "WEDNESDAY_MORNING",
+      "WEDNESDAY_AFTERNOON",
+      "THURSDAY_MORNING",
+      "THURSDAY_AFTERNOON",
+      "FRIDAY_MORNING",
+      "FRIDAY_AFTERNOON"
+    ],
+    "modules": [
+      "M300",
+      "M400",
+      "M420",
+      "M600"
+    ]
+  },
+  {
+    "firstname": "Sigfried",
+    "lastname": "Mueller",
+    "shortcut": "smu",
+    "pensum": 20,
+    "availableDays": [
+      "TUESDAY_MORNING",
+      "THURSDAY_AFTERNOON"
+    ],
+    "modules": [
+      "M609",
+      "M600"
+    ]
+  },
+  {
+    "firstname": "Mark",
+    "lastname": "Forster",
+    "shortcut": "mfo",
+    "pensum": 50,
+    "availableDays": [
+      "MONDAY_AFTERNOON",
+      "TUESDAY_MORNING",
+      "TUESDAY_AFTERNOON",
+      "WEDNESDAY_MORNING",
+      "WEDNESDAY_AFTERNOON"
+    ],
+    "modules": [
+      "M700",
+      "M800",
+      "M202",
+      "M203"
+    ]
+  },
+  {
+    "firstname": "Heidi",
+    "lastname": "Sommer",
+    "shortcut": "hso",
+    "pensum": 80,
+    "availableDays": [
+      "TUESDAY_MORNING",
+      "TUESDAY_AFTERNOON",
+      "WEDNESDAY_MORNING",
+      "WEDNESDAY_AFTERNOON",
+      "THURSDAY_MORNING",
+      "THURSDAY_AFTERNOON",
+      "FRIDAY_MORNING",
+      "FRIDAY_AFTERNOON"
+    ],
+    "modules": [
+      "M100",
+      "M300",
+      "M420",
+      "M800",
+      "M700"
+    ]
+  },
+  {
+    "firstname": "Christine",
+    "lastname": "Steinmann",
+    "shortcut": "cst",
+    "pensum": 100,
+    "availableDays": [
+      "MONDAY_MORNING",
+      "MONDAY_AFTERNOON",
+      "TUESDAY_MORNING",
+      "TUESDAY_AFTERNOON",
+      "WEDNESDAY_MORNING",
+      "WEDNESDAY_AFTERNOON",
+      "THURSDAY_MORNING",
+      "THURSDAY_AFTERNOON",
+      "FRIDAY_MORNING",
+      "FRIDAY_AFTERNOON"
+    ],
+    "modules": [
+      "M700",
+      "M800",
+      "M609",
+      "M600",
+      "M400",
+      "M100"
+    ]
+  },
+  {
+    "firstname": "Roger",
+    "lastname": "Himmler",
+    "shortcut": "rhi",
+    "pensum": 40,
+    "availableDays": [
+      "WEDNESDAY_MORNING",
+      "WEDNESDAY_AFTERNOON",
+      "THURSDAY_MORNING",
+      "THURSDAY_AFTERNOON"
+    ],
+    "modules": [
+      "M203",
+      "M600",
+      "M202",
+      "M201",
+      "M300",
+      "M420"
+    ]
+  }
+]
