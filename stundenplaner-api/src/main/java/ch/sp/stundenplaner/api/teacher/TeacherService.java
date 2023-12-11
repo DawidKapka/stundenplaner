@@ -13,11 +13,11 @@ public class TeacherService {
     @Inject
     private TeacherRespository respository;
 
-    public void saveTeachers(List<Teacher> teachers) {
+    public void saveTeachers(List<com.dk.stundenplaner.dao.Teacher> teachers) {
         respository.saveTeachers(teachers);
     }
 
-    public List<Teacher> readTeachers() {
+    public List<com.dk.stundenplaner.dao.Teacher> readTeachers() {
         return respository.readTeachers();
     }
 }

@@ -1,6 +1,6 @@
 package ch.sp.stundenplaner.api.teacher;
 
-import com.dk.stundenplaner.model.Teacher;
+import com.dk.stundenplaner.dao.Teacher;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
