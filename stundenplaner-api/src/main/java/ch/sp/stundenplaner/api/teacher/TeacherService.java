@@ -1,7 +1,6 @@
 package ch.sp.stundenplaner.api.teacher;
 
-import com.dk.stundenplaner.model.Teacher;
-import com.dk.stundenplaner.repository.TeacherRespository;
+import com.dk.stundenplaner.repository.TeacherRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
@@ -11,7 +10,7 @@ import java.util.List;
 public class TeacherService {
 
     @Inject
-    private TeacherRespository respository;
+    private TeacherRepository respository;
 
     public void saveTeachers(List<com.dk.stundenplaner.dao.Teacher> teachers) {
         respository.saveTeachers(teachers);

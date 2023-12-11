@@ -7,7 +7,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import java.util.List;
 
 @ApplicationScoped
-public class TeacherRespository {
+public class TeacherRepository {
     TeacherDao teacherDao = new TeacherDao();
 
     public void saveTeachers(List<Teacher> teachers) {
