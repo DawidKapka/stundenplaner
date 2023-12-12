@@ -2,13 +2,10 @@ package ch.sp.stundenplaner.api.teacher;
 
 import ch.sp.stundenplaner.api.dto.JsonParser;
 import ch.sp.stundenplaner.api.dto.TeacherListDto;
-import com.dk.stundenplaner.model.Teacher;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-
-import java.util.List;
 
 @Path("/teacher")
 public class TeacherResource {
