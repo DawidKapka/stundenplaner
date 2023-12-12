@@ -1,5 +1,6 @@
 package ch.sp.stundenplaner.api.teacher;
 
+import ch.sp.stundenplaner.api.dto.TeacherListDto;
 import com.dk.stundenplaner.model.Teacher;
 import com.dk.stundenplaner.repository.TeacherRespository;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -13,11 +14,14 @@ public class TeacherService {
     @Inject
     private TeacherRespository respository;
 
-    public void saveTeachers(List<Teacher> teachers) {
-        respository.saveTeachers(teachers);
+    public void saveTeachers(TeacherListDto dto) {
+        respository.saveTeachers(dto.getTeachers());
     }
 
-    public List<Teacher> readTeachers() {
-        return respository.readTeachers();
+    public TeacherListDto readTeachers() {
+        final List<Teacher> teachers = respository.readTeachers();
+        return TeacherListDto.builder()
+                .teachers(teachers)
+                .build();
     }
 }

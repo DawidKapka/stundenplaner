@@ -18,10 +18,10 @@ import java.util.Map;
 public class JsonReader {
 
     private static Map<Class<?>, String> pathMap = new HashMap<>() {{
-        put(Teacher.class, "/test-teachers.json");
-        put(SchoolModule.class, "/test-modules.json");
-        put(SchoolClass.class, "/test-classes.json");
-        put(Room.class, "/test-rooms.json");
+        put(Teacher.class, "/src/test-teachers.json");
+        put(SchoolModule.class, "/src/test-modules.json");
+        put(SchoolClass.class, "/src/test-classes.json");
+        put(Room.class, "/src/test-rooms.json");
     }};
 
     public static List<SchoolModule> readModules() {

@@ -15,4 +15,8 @@ import java.util.List;
 public class TeacherListDto extends AbstractDto {
     @Builder.Default
     private List<Teacher> teachers = new ArrayList<>();
+
+    public static TeacherListDto fromJson(String json) {
+        return fromJson(json, TeacherListDto.class);
+    }
 }
