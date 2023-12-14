@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SchoolModules} from "../interfaces/schoolModules";
 
 @Component({
@@ -22,7 +22,9 @@ export class FaecherErfassenComponent implements OnInit {
 
   displayedColumns: string[] = ['shortcut', 'name'];
 
-  openPopup() {
+  showPopup: boolean = false;
 
+  openPopup() {
+    this.showPopup = true;
   }
 }
