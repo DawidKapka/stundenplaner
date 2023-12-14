@@ -1,1 +1,22 @@
-<p>faecher-erfassen works!</p>
+<mat-card class="card-container">
+    <mat-card-header>
+        <mat-card-title>Fach erfassen</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <form>
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Abkürzung" />
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Fachname" />
+            </mat-form-field>
+
+            <div class="button-container">
+                <button mat-button color="warn">Abbrechen</button>
+                <button mat-button color="primary">Fach hinzufügen</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
