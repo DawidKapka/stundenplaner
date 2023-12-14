@@ -1,6 +1,8 @@
 <server description="Sample Liberty server">
     <featureManager>
         <feature>restfulWS-3.1</feature>
+        <feature>cdi-4.0</feature>
+        <feature>persistence-3.1</feature>
     </featureManager>
     <variable name="default.http.port" defaultValue="9080" />
     <variable name="default.https.port" defaultValue="9443" />
@@ -11,4 +13,12 @@
     <enterpriseApplication id="stundenplaner-ear"
                            location="stundenplaner-ear-1.0-SNAPSHOT.ear"
                            name="stundenplaner-ear" />
+    <dataSource jndiName="jdbc/stundenplaner">
+        <properties.microsoft.sqlserver serverName="localhost" portNumber="1433"
+                                        databaseName="stundenplaner"
+                                        user="sa"
+                                        password="Secure123."/>
+
+    </dataSource>
+    <logging traceSpecification="JPA=all" />
 </server>

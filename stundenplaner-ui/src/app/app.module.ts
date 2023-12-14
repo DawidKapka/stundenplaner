@@ -15,9 +15,30 @@ import {MatIconModule} from "@angular/material/icon";
 import { LehrerErfassenComponent } from './lehrer-erfassen/lehrer-erfassen.component';
 import { ZimmerErfassenComponent } from './zimmer-erfassen/zimmer-erfassen.component';
 import { KlasseErfassenComponent } from './klasse-erfassen/klasse-erfassen.component';
+import {MatCardModule} from '@angular/material/card';
+import {FaecherErfassenComponent} from './faecher-erfassen/faecher-erfassen.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    FaecherErfassenComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
     declarations: [
         AppComponent,
         HeaderComponent,
@@ -40,5 +61,4 @@ import { KlasseErfassenComponent } from './klasse-erfassen/klasse-erfassen.compo
     providers: [],
     bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule { }

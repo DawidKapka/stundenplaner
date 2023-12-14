@@ -4,20 +4,20 @@ create database stundenplaner;
 use stundenplaner;
 
 create table class(
-    classId integer auto_increment,
+    classId integer,
     className varchar(1000) not null,
     primary key (classId)
 );
 
 create table module(
-    moduleId integer auto_increment,
+    moduleId integer,
     moduleName varchar(1000) not null,
     duration varchar(100) not null,
     primary key (moduleId)
 );
 
 create table teacher(
-    teacherId integer auto_increment,
+    teacherId integer,
     firstname varchar(1000) not null,
     lastname varchar(1000) not null,
     shortcut varchar(100) not null,
@@ -26,13 +26,13 @@ create table teacher(
 );
 
 create table room(
-    roomId integer auto_increment,
+    roomId integer,
     roomName varchar(1000) not null,
     primary key (roomId)
 );
 
 create table teacher_available_days(
-    teacherAvailableDayId integer auto_increment,
+    teacherAvailableDayId integer,
     fk_teacherId integer not null,
     day varchar(250) not null,
     primary key (teacherAvailableDayId),
@@ -40,7 +40,7 @@ create table teacher_available_days(
 );
 
 create table class_unavailable_days(
-    classUnavailableDayId integer auto_increment,
+    classUnavailableDayId integer,
     fk_classId integer not null,
     day varchar(250) not null,
     primary key (classUnavailableDayId),
@@ -48,7 +48,7 @@ create table class_unavailable_days(
 );
 
 create table teacher_modules(
-    teacherModuleId integer auto_increment,
+    teacherModuleId integer,
     fk_teacherId integer not null,
     fk_moduleId integer not null,
     primary key (teacherModuleId),
@@ -57,7 +57,7 @@ create table teacher_modules(
 );
 
 create table class_modules(
-    classModuleId integer auto_increment,
+    classModuleId integer,
     fk_classId integer not null,
     fk_moduleId integer not null,
     primary key (classModuleId),
