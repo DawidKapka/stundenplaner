@@ -1,7 +1,32 @@
 .header {
   width: 100vw;
   height: 10vh;
-  background-color: aqua;
   text-align: center;
   font-size: 24px;
+}
+
+.content {
+  height: 70vh;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 10vh;
+}
+
+.nav-button{
+  height: 50%;
+  width: 20vw;
+  margin-top: 5vh;
+}
+
+.next {
+  grid-area: 1 / 2 / 2 / 3;
+  margin-left: 27vw;
+}
+
+.back {
+  grid-area: 1 / 1 / 2 / 2;
+  margin-right: 30vw;
 }
