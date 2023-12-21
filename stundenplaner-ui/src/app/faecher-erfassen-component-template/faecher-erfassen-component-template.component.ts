@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SchoolModules} from "../interfaces/schoolModules";
 
 @Component({
   selector: 'app-faecher-erfassen-component-template',
@@ -7,17 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FaecherErfassenComponentTemplateComponent implements OnInit {
 
-  shortName: string = '';
-  longName: string = '';
+  schoolModule: SchoolModules = {name: '', shortcut: ''};
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  addSubject() {
-    console.log('ShortName Value:', this.shortName);
-    console.log('LongName Value:', this.longName);
-
   }
 }

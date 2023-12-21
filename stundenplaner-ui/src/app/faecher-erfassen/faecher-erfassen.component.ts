@@ -44,7 +44,18 @@ export class FaecherErfassenComponent implements OnInit {
   }
 
   editItem(element: SchoolModules) {
+    this.http.get('faecher-erfassen-template.component.html', { responseType: 'text' })
 
+    this.showPopup = true;
+    const dialogRef = this.dialog.open(FaecherErfassenComponentTemplateComponent, {
+      width: '400px',
+      data: element
+    });
+
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed', result);
+    });
   }
 
   deleteItem(element: SchoolModules) {
