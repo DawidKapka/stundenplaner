@@ -34,7 +34,7 @@ export class LehrerErfassenComponent implements OnInit {
   showPopup: boolean = false;
 
   openPopup() {
-    this.http.get('faecher-erfassen-template.component.html', { responseType: 'text' })
+    this.http.get('lehrer-erfassen-template.component.html', { responseType: 'text' })
 
     this.showPopup = true;
     const dialogRef = this.dialog.open(LehrerErfassenComponentTemplateComponent, {
@@ -48,16 +48,16 @@ export class LehrerErfassenComponent implements OnInit {
   }
 
 
-  editItem(element: Teacher) {
+  editItem(teacher: Teacher) {
   }
 
-  deleteItem(module: Teacher) {
-    this.teacherService.deleteTeacher(module)
+  deleteItem(teacher: Teacher) {
+    this.teacherService.deleteTeacher(teacher)
     this.updateTable();
   }
 
-  addItem(module: Teacher) {
-    this.teacherService.deleteTeacher(module)
+  addItem(teacher: Teacher) {
+    this.teacherService.addTeacher(teacher)
 
   }
 

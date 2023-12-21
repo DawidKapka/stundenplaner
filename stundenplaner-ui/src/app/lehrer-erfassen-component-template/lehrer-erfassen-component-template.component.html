@@ -2,27 +2,38 @@
     <h1 id="popupTitle">Lehrer erfassen</h1>
     <form>
         <mat-form-field class="full-width">
-            <input [(ngModel)]="schoolTeacher.shortcut" [ngModelOptions]="{ standalone: true }" matInput placeholder="Abkürzung"/>
+            <input [(ngModel)]="schoolTeacher.shortcut" [ngModelOptions]="{ standalone: true }" matInput
+                   placeholder="Abkürzung"/>
+        </mat-form-field>
+
+
+        <mat-form-field class="full-width">
+            <input [(ngModel)]="schoolTeacher.name" [ngModelOptions]="{ standalone: true }" matInput
+                   placeholder="Name"/>
         </mat-form-field>
 
         <mat-form-field class="full-width">
-            <input [(ngModel)]="schoolTeacher.name" [ngModelOptions]="{ standalone: true }" matInput placeholder="Name"/>
+            <input [(ngModel)]="schoolTeacher.pensum" [ngModelOptions]="{ standalone: true }" matInput
+                   placeholder="Pensum"/>
         </mat-form-field>
 
         <mat-form-field class="full-width">
-            <input [(ngModel)]="schoolTeacher.pensum" [ngModelOptions]="{ standalone: true }" matInput placeholder="Pensum"/>
+            <input [(ngModel)]="schoolTeacher.availableDays" [ngModelOptions]="{ standalone: true }" matInput
+                   placeholder="Verfügbare Tage"/>
         </mat-form-field>
 
-        <mat-form-field class="full-width">
-            <input [(ngModel)]="schoolTeacher.availableDays" [ngModelOptions]="{ standalone: true }" matInput placeholder="Verfügbare Tage"/>
-        </mat-form-field>
+        <select (change)="update($event)">
+            <option value="default">----</option>
+            <option *ngFor="let module of schoolModules" [value]="module.name">
+                {{module.name}}
+            </option>
+        </select>
 
-        <mat-form-field class="full-width">
-            <input [(ngModel)]="schoolTeacher.modules" [ngModelOptions]="{ standalone: true }" matInput placeholder="Fächer"/>
-        </mat-form-field>
         <div class="button-container" mat-dialog-actions>
             <button mat-button mat-dialog-close color="warn">Abbrechen</button>
-            <button mat-button mat-dialog-close color="primary"  id="addSubject" [mat-dialog-close]="schoolTeacher">Lehrer hinzufügen</button>
+            <button mat-button mat-dialog-close color="primary" id="addSubject" [mat-dialog-close]="schoolTeacher">
+                Lehrer hinzufügen
+            </button>
         </div>
     </form>
 </div>

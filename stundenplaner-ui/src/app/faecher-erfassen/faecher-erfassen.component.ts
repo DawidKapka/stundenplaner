@@ -52,7 +52,6 @@ export class FaecherErfassenComponent implements OnInit {
 
   deleteItem(module: SchoolModules) {
     this.moduleService.deleteModule(module)
-    console.log(this.moduleService.schoolModules);
     this.updateTable();
   }
 
