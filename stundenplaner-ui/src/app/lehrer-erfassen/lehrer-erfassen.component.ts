@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Teacher} from "../interfaces/teacher";
-import {MatDialog} from "@angular/material/dialog";
-import {DomSanitizer} from "@angular/platform-browser";
-import {HttpClient} from "@angular/common/http";
-import {SchoolModuleService} from "../services/school-module.service";
 import {TeacherService} from "../services/teacher.service";
+import {MatDialog} from '@angular/material/dialog';
+import {HttpClient} from '@angular/common/http';
+import {DomSanitizer} from '@angular/platform-browser';
+import {MatTable} from '@angular/material/table';
+import {LehrerErfassenComponentTemplateComponent} from '../lehrer-erfassen-component-template/lehrer-erfassen-component-template.component';
 
 @Component({
   selector: 'app-lehrer-erfassen',
@@ -12,6 +13,9 @@ import {TeacherService} from "../services/teacher.service";
   styleUrls: ['./lehrer-erfassen.component.scss']
 })
 export class LehrerErfassenComponent implements OnInit {
+
+ // @ts-ignore
+  @ViewChild(MatTable) table: MatTable<any>
 
   constructor(public dialog: MatDialog,
               private sanitizer: DomSanitizer,
@@ -30,15 +34,34 @@ export class LehrerErfassenComponent implements OnInit {
   showPopup: boolean = false;
 
   openPopup() {
+    this.http.get('faecher-erfassen-template.component.html', { responseType: 'text' })
+
     this.showPopup = true;
+    const dialogRef = this.dialog.open(LehrerErfassenComponentTemplateComponent, {
+      width: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+       this.addItem(result)
+       this.updateTable();
+    });
   }
+
 
   editItem(element: Teacher) {
+  }
+
+  deleteItem(module: Teacher) {
+    this.teacherService.deleteTeacher(module)
+    this.updateTable();
+  }
+
+  addItem(module: Teacher) {
+    this.teacherService.deleteTeacher(module)
 
   }
 
-  deleteItem(element: Teacher) {
-
+  updateTable() {
+    this.table.renderRows()
   }
-
 }

@@ -21,6 +21,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {HttpClientModule} from '@angular/common/http';
 import { FaecherErfassenComponentTemplateComponent } from './faecher-erfassen-component-template/faecher-erfassen-component-template.component';
 import {FormsModule} from '@angular/forms';
+import {LehrerErfassenComponentTemplateComponent} from './lehrer-erfassen-component-template/lehrer-erfassen-component-template.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {FormsModule} from '@angular/forms';
         LehrerErfassenComponent,
         ZimmerErfassenComponent,
         KlasseErfassenComponent,
-        FaecherErfassenComponentTemplateComponent
+        FaecherErfassenComponentTemplateComponent,
+        LehrerErfassenComponentTemplateComponent
     ],
     imports: [
         BrowserModule,
