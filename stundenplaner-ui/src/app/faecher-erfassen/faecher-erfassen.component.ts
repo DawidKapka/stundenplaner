@@ -25,7 +25,7 @@ export class FaecherErfassenComponent implements OnInit {
     {shortcut: 'm123', name: "Super duper jaa"},
   ]
 
-  displayedColumns: string[] = ['shortcut', 'name'];
+  displayedColumns: string[] = ['shortcut', 'name', 'action'];
 
   showPopup: boolean = false;
 
@@ -41,5 +41,13 @@ export class FaecherErfassenComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed', result);
     });
+  }
+
+  editItem(element: SchoolModules) {
+
+  }
+
+  deleteItem(element: SchoolModules) {
+
   }
 }

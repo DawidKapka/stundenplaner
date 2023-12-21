@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {SchoolModules} from "../interfaces/schoolModules";
+import {SchoolClass} from "../interfaces/schoolClass";
 
 @Component({
   selector: 'app-klasse-erfassen',
@@ -12,4 +14,22 @@ export class KlasseErfassenComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  schoolClasses: SchoolClass[] = [
+  ]
+
+  displayedColumns: string[] = ['name', 'daysUnavailable', 'modules', 'hasBasislehrjahr', 'action'];
+
+  showPopup: boolean = false;
+
+  openPopup() {
+    this.showPopup = true;
+  }
+
+  editItem(element: SchoolClass) {
+
+  }
+
+  deleteItem(element: SchoolClass) {
+
+  }
 }

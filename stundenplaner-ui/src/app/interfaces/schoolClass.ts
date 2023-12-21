@@ -5,4 +5,5 @@ export interface SchoolClass {
     name: string;
     daysUnavailable: Days[];
     modules: SchoolModules[];
+    hasBasislehrjahr: boolean;
 }

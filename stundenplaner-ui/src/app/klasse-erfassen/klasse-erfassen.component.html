@@ -1,1 +1,44 @@
-<p>klasse-erfassen works!</p>
+<div>
+    <div class="table-con container">
+        <table mat-table [dataSource]="schoolClasses" class="table">
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="daysUnavailable">
+                <th mat-header-cell *matHeaderCellDef> Verfügbare Tage</th>
+                <td mat-cell *matCellDef="let element"> {{element.daysUnavailable}} </td>
+            </ng-container>
+
+       <ng-container matColumnDef="modules">
+                <th mat-header-cell *matHeaderCellDef> Fächer</th>
+                <td mat-cell *matCellDef="let element"> {{element.modules}} </td>
+            </ng-container>
+
+       <ng-container matColumnDef="hasBasislehrjahr">
+                <th mat-header-cell *matHeaderCellDef> Basislehrjahr</th>
+                <td mat-cell *matCellDef="let element"> {{element.hasBasislehrjahr}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef style="width: 10%"></th>
+                <td mat-cell *matCellDef="let element" style="width: 10%">
+                    <button mat-icon-button color="primary" (click)="editItem(element)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="deleteItem(element)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    <div class="button-con container">
+        <button mat-raised-button (click)="openPopup()" class="erfassen-button" color="primary">Neue Klasse erfassen
+        </button>
+    </div>
+</div>
