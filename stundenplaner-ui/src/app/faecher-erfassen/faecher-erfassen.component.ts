@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {SchoolModules} from "../interfaces/schoolModules";
 import {MatDialog} from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
 import {HttpClient} from '@angular/common/http';
 import {FaecherErfassenComponentTemplateComponent} from '../faecher-erfassen-component-template/faecher-erfassen-component-template.component';
+import {SchoolModuleService} from "../services/school-module.service";
+import {MatTable} from "@angular/material/table";
 
 
 @Component({
@@ -13,17 +15,18 @@ import {FaecherErfassenComponentTemplateComponent} from '../faecher-erfassen-com
 })
 export class FaecherErfassenComponent implements OnInit {
 
-  constructor(public dialog: MatDialog, private sanitizer: DomSanitizer, private http: HttpClient) { }
+  // @ts-ignore
+  @ViewChild(MatTable) table: MatTable<any>
+
+  constructor(public dialog: MatDialog,
+              private sanitizer: DomSanitizer,
+              private http: HttpClient,
+              private moduleService: SchoolModuleService) { }
 
   ngOnInit(): void {
   }
 
-  schoolModules: SchoolModules[] = [
-    {shortcut: 'm123', name: "Super duper jaa"},
-    {shortcut: 'm123', name: "Super duper jaa"},
-    {shortcut: 'm123', name: "Super duper jaa"},
-    {shortcut: 'm123', name: "Super duper jaa"},
-  ]
+  schoolModules: SchoolModules[] = this.moduleService.getSchoolModules();
 
   displayedColumns: string[] = ['shortcut', 'name', 'action'];
 
@@ -39,26 +42,23 @@ export class FaecherErfassenComponent implements OnInit {
 
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed', result);
+      this.addItem(result)
+      this.updateTable();
     });
   }
 
   editItem(element: SchoolModules) {
-    this.http.get('faecher-erfassen-template.component.html', { responseType: 'text' })
-
-    this.showPopup = true;
-    const dialogRef = this.dialog.open(FaecherErfassenComponentTemplateComponent, {
-      width: '400px',
-      data: element
-    });
-
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed', result);
-    });
   }
 
   deleteItem(element: SchoolModules) {
+  }
 
+  addItem(module: SchoolModules) {
+    this.moduleService.addSchoolModule(module)
+
+  }
+
+  updateTable() {
+    this.table.renderRows()
   }
 }
