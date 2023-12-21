@@ -50,7 +50,10 @@ export class FaecherErfassenComponent implements OnInit {
   editItem(element: SchoolModules) {
   }
 
-  deleteItem(element: SchoolModules) {
+  deleteItem(module: SchoolModules) {
+    this.moduleService.deleteModule(module)
+    console.log(this.moduleService.schoolModules);
+    this.updateTable();
   }
 
   addItem(module: SchoolModules) {
