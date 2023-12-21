@@ -34,7 +34,7 @@ export class FaecherErfassenComponent implements OnInit {
 
     this.showPopup = true;
     const dialogRef = this.dialog.open(FaecherErfassenComponentTemplateComponent, {
-      width: '400px',
+      width: '600px',
     });
 
 
