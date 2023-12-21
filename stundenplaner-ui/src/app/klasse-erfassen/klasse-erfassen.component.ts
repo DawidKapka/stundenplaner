@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {SchoolModules} from "../interfaces/schoolModules";
 import {SchoolClass} from "../interfaces/schoolClass";
+import {MatDialog} from "@angular/material/dialog";
+import {DomSanitizer} from "@angular/platform-browser";
+import {HttpClient} from "@angular/common/http";
+import {TeacherService} from "../services/teacher.service";
+import {SchoolClassService} from "../services/school-class.service";
 
 @Component({
   selector: 'app-klasse-erfassen',
@@ -9,7 +14,10 @@ import {SchoolClass} from "../interfaces/schoolClass";
 })
 export class KlasseErfassenComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog,
+              private sanitizer: DomSanitizer,
+              private http: HttpClient,
+              private schoolClassService: SchoolClassService) { }
 
   ngOnInit(): void {
   }

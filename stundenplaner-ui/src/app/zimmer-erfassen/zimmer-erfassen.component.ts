@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {SchoolClass} from "../interfaces/schoolClass";
 import {Room} from "../interfaces/Room";
+import {MatDialog} from "@angular/material/dialog";
+import {DomSanitizer} from "@angular/platform-browser";
+import {HttpClient} from "@angular/common/http";
+import {TeacherService} from "../services/teacher.service";
+import {RoomService} from "../services/room.service";
 
 @Component({
   selector: 'app-zimmer-erfassen',
@@ -9,7 +14,10 @@ import {Room} from "../interfaces/Room";
 })
 export class ZimmerErfassenComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog,
+              private sanitizer: DomSanitizer,
+              private http: HttpClient,
+              private roomService: RoomService) { }
 
   ngOnInit(): void {
   }
