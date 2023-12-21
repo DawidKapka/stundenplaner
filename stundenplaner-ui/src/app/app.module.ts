@@ -19,6 +19,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {HttpClientModule} from '@angular/common/http';
+import { FaecherErfassenComponentTemplateComponent } from './faecher-erfassen-component-template/faecher-erfassen-component-template.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import {HttpClientModule} from '@angular/common/http';
         FaecherErfassenComponent,
         LehrerErfassenComponent,
         ZimmerErfassenComponent,
-        KlasseErfassenComponent
+        KlasseErfassenComponent,
+        FaecherErfassenComponentTemplateComponent
     ],
     imports: [
         BrowserModule,
@@ -45,7 +48,8 @@ import {HttpClientModule} from '@angular/common/http';
         MatIconModule,
         MatCardModule,
         MatInputModule,
-        MatDialogModule
+        MatDialogModule,
+        FormsModule
     ]
 })
 export class AppModule {

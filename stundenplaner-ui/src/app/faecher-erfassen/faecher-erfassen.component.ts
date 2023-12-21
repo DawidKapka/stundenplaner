@@ -3,6 +3,7 @@ import {SchoolModules} from "../interfaces/schoolModules";
 import {MatDialog} from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
 import {HttpClient} from '@angular/common/http';
+import {FaecherErfassenComponentTemplateComponent} from '../faecher-erfassen-component-template/faecher-erfassen-component-template.component';
 
 
 @Component({
@@ -32,7 +33,7 @@ export class FaecherErfassenComponent implements OnInit {
     this.http.get('faecher-erfassen-template.component.html', { responseType: 'text' })
 
     this.showPopup = true;
-    const dialogRef = this.dialog.open(FaecherErfassenComponent, {
+    const dialogRef = this.dialog.open(FaecherErfassenComponentTemplateComponent, {
       width: '400px',
     });
 
