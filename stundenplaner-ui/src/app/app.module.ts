@@ -17,6 +17,8 @@ import {MatCardModule} from '@angular/material/card';
 import {FaecherErfassenComponent} from './faecher-erfassen/faecher-erfassen.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -35,13 +37,15 @@ import {MatButtonModule} from '@angular/material/button';
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        HttpClientModule,
         MatToolbarModule,
         MatTableModule,
         MatButtonModule,
         MatStepperModule,
         MatIconModule,
         MatCardModule,
-        MatInputModule
+        MatInputModule,
+        MatDialogModule
     ]
 })
 export class AppModule {

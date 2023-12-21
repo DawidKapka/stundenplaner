@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {SchoolModules} from "../interfaces/schoolModules";
+import {MatDialog} from '@angular/material/dialog';
+import { DomSanitizer } from '@angular/platform-browser';
+import {HttpClient} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-faecher-erfassen',
@@ -8,7 +12,7 @@ import {SchoolModules} from "../interfaces/schoolModules";
 })
 export class FaecherErfassenComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog, private sanitizer: DomSanitizer, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +29,16 @@ export class FaecherErfassenComponent implements OnInit {
   showPopup: boolean = false;
 
   openPopup() {
+    this.http.get('faecher-erfassen-template.component.html', { responseType: 'text' })
+
     this.showPopup = true;
+    const dialogRef = this.dialog.open(FaecherErfassenComponent, {
+      width: '400px',
+    });
+
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed', result);
+    });
   }
 }
