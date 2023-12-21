@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {SchoolModules} from "../interfaces/schoolModules";
 import {SchoolClass} from "../interfaces/schoolClass";
+import {ZimmerErfassenComponentTemplateComponent} from '../zimmer-erfassen-component-template/zimmer-erfassen-component-template.component';
+import {Teacher} from '../interfaces/teacher';
+import {MatDialog} from '@angular/material/dialog';
+import {DomSanitizer} from '@angular/platform-browser';
+import {HttpClient} from '@angular/common/http';
+import {KlasseErfassenComponentTemplateComponent} from '../klasse-erfassen-component-template/klasse-erfassen-component-template.component';
 
 @Component({
   selector: 'app-klasse-erfassen',
@@ -9,7 +15,9 @@ import {SchoolClass} from "../interfaces/schoolClass";
 })
 export class KlasseErfassenComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog,
+              private sanitizer: DomSanitizer,
+              private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -23,13 +31,28 @@ export class KlasseErfassenComponent implements OnInit {
 
   openPopup() {
     this.showPopup = true;
+    const dialogRef = this.dialog.open(KlasseErfassenComponentTemplateComponent, {
+      width: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.addItem(result)
+      this.updateTable();
+    });
   }
 
-  editItem(element: SchoolClass) {
+  //noch machen
 
+  editItem(element: Teacher) {
   }
 
-  deleteItem(element: SchoolClass) {
-
+  deleteItem(module: Teacher) {
   }
+
+  addItem(module: Teacher) {
+  }
+
+  updateTable() {
+  }
+
 }
