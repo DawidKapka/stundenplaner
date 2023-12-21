@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {SchoolClass} from "../interfaces/schoolClass";
 import {Room} from "../interfaces/Room";
+import {MatDialog} from "@angular/material/dialog";
+import {DomSanitizer} from "@angular/platform-browser";
+import {HttpClient} from "@angular/common/http";
+import {TeacherService} from "../services/teacher.service";
+import {RoomService} from "../services/room.service";
 import {LehrerErfassenComponentTemplateComponent} from '../lehrer-erfassen-component-template/lehrer-erfassen-component-template.component';
 import {MatDialog} from '@angular/material/dialog';
 import {DomSanitizer} from '@angular/platform-browser';
@@ -17,7 +22,8 @@ export class ZimmerErfassenComponent implements OnInit {
 
   constructor(public dialog: MatDialog,
               private sanitizer: DomSanitizer,
-              private http: HttpClient) { }
+              private http: HttpClient,
+              private roomService: RoomService) { }
 
   ngOnInit(): void {
   }
@@ -41,18 +47,12 @@ export class ZimmerErfassenComponent implements OnInit {
     });
   }
 
-  //noch machen
+  editItem(element: Room) {
 
-  editItem(element: Teacher) {
   }
 
-  deleteItem(module: Teacher) {
-  }
+  deleteItem(element: Room) {
 
-  addItem(module: Teacher) {
-  }
-
-  updateTable() {
   }
 
 }

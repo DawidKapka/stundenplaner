@@ -43,13 +43,13 @@ export class KlasseErfassenComponent implements OnInit {
 
   //noch machen
 
-  editItem(element: Teacher) {
+  editItem(element: SchoolClass) {
   }
 
-  deleteItem(module: Teacher) {
+  deleteItem(module: SchoolClass) {
   }
 
-  addItem(module: Teacher) {
+  addItem(module: SchoolClass) {
   }
 
   updateTable() {

@@ -1,11 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Teacher} from "../interfaces/teacher";
-import {FaecherErfassenComponentTemplateComponent} from '../faecher-erfassen-component-template/faecher-erfassen-component-template.component';
+import {TeacherService} from "../services/teacher.service";
 import {MatDialog} from '@angular/material/dialog';
 import {HttpClient} from '@angular/common/http';
-import {SchoolModules} from '../interfaces/schoolModules';
 import {DomSanitizer} from '@angular/platform-browser';
-import {SchoolModuleService} from '../services/school-module.service';
 import {MatTable} from '@angular/material/table';
 import {LehrerErfassenComponentTemplateComponent} from '../lehrer-erfassen-component-template/lehrer-erfassen-component-template.component';
 
@@ -16,13 +14,13 @@ import {LehrerErfassenComponentTemplateComponent} from '../lehrer-erfassen-compo
 })
 export class LehrerErfassenComponent implements OnInit {
 
-  // @ts-ignore
+ // @ts-ignore
   @ViewChild(MatTable) table: MatTable<any>
 
   constructor(public dialog: MatDialog,
               private sanitizer: DomSanitizer,
               private http: HttpClient,
-              private moduleService: SchoolModuleService) { }
+              private teacherService: TeacherService) { }
 
   ngOnInit(): void {
   }
@@ -49,19 +47,17 @@ export class LehrerErfassenComponent implements OnInit {
     });
   }
 
-  // change school to teacher
 
   editItem(element: Teacher) {
   }
 
   deleteItem(module: Teacher) {
-    this.moduleService.deleteModule(module)
-    console.log(this.moduleService.schoolModules);
+    this.teacherService.deleteTeacher(module)
     this.updateTable();
   }
 
   addItem(module: Teacher) {
-    this.moduleService.addSchoolModule(module)
+    this.teacherService.deleteTeacher(module)
 
   }
 
