@@ -3,7 +3,7 @@ import {SchoolModules} from "./schoolModules";
 
 export interface SchoolClass {
     name: string;
-    daysUnavailable: Days[];
+    daysAvailable: Days[];
     modules: SchoolModules[];
     hasBasislehrjahr: boolean;
 }

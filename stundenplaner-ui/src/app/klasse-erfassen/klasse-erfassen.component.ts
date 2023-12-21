@@ -17,7 +17,7 @@ export class KlasseErfassenComponent implements OnInit {
   schoolClasses: SchoolClass[] = [
   ]
 
-  displayedColumns: string[] = ['name', 'daysUnavailable', 'modules', 'hasBasislehrjahr', 'action'];
+  displayedColumns: string[] = ['name', 'daysAvailable', 'modules', 'hasBasislehrjahr', 'action'];
 
   showPopup: boolean = false;
 
