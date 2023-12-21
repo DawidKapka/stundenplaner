@@ -1,17 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {SchoolClass} from "../interfaces/schoolClass";
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Room} from "../interfaces/Room";
 import {MatDialog} from "@angular/material/dialog";
 import {DomSanitizer} from "@angular/platform-browser";
 import {HttpClient} from "@angular/common/http";
-import {TeacherService} from "../services/teacher.service";
 import {RoomService} from "../services/room.service";
-import {LehrerErfassenComponentTemplateComponent} from '../lehrer-erfassen-component-template/lehrer-erfassen-component-template.component';
-import {MatDialog} from '@angular/material/dialog';
-import {DomSanitizer} from '@angular/platform-browser';
-import {HttpClient} from '@angular/common/http';
 import {ZimmerErfassenComponentTemplateComponent} from '../zimmer-erfassen-component-template/zimmer-erfassen-component-template.component';
-import {Teacher} from '../interfaces/teacher';
+import {MatTable} from '@angular/material/table';
 
 @Component({
   selector: 'app-zimmer-erfassen',
@@ -19,6 +13,9 @@ import {Teacher} from '../interfaces/teacher';
   styleUrls: ['./zimmer-erfassen.component.scss']
 })
 export class ZimmerErfassenComponent implements OnInit {
+
+  // @ts-ignore
+  @ViewChild(MatTable) table: MatTable<any>
 
   constructor(public dialog: MatDialog,
               private sanitizer: DomSanitizer,
@@ -48,11 +45,20 @@ export class ZimmerErfassenComponent implements OnInit {
   }
 
   editItem(element: Room) {
+  }
+
+  deleteItem(room: Room) {
+    this.roomService.deleteRoom(room)
+    console.log(this.roomService.rooms);
+    this.updateTable();
+  }
+
+  addItem(room: Room) {
+    this.roomService.addRoom(room)
 
   }
 
-  deleteItem(element: Room) {
-
+  updateTable() {
+    this.table.renderRows()
   }
-
 }

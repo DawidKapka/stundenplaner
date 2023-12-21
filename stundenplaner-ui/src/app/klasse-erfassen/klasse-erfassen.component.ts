@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {SchoolModules} from "../interfaces/schoolModules";
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {SchoolClass} from "../interfaces/schoolClass";
-import {ZimmerErfassenComponentTemplateComponent} from '../zimmer-erfassen-component-template/zimmer-erfassen-component-template.component';
-import {Teacher} from '../interfaces/teacher';
 import {MatDialog} from '@angular/material/dialog';
 import {DomSanitizer} from '@angular/platform-browser';
 import {HttpClient} from '@angular/common/http';
 import {KlasseErfassenComponentTemplateComponent} from '../klasse-erfassen-component-template/klasse-erfassen-component-template.component';
+import {SchoolClassService} from '../services/school-class.service';
+import {MatTable} from '@angular/material/table';
 
 @Component({
   selector: 'app-klasse-erfassen',
@@ -15,9 +14,13 @@ import {KlasseErfassenComponentTemplateComponent} from '../klasse-erfassen-compo
 })
 export class KlasseErfassenComponent implements OnInit {
 
+  // @ts-ignore
+  @ViewChild(MatTable) table: MatTable<any>
+
   constructor(public dialog: MatDialog,
               private sanitizer: DomSanitizer,
-              private http: HttpClient) { }
+              private http: HttpClient,
+              private schoolClassService: SchoolClassService) { }
 
   ngOnInit(): void {
   }
@@ -41,18 +44,21 @@ export class KlasseErfassenComponent implements OnInit {
     });
   }
 
-  //noch machen
-
   editItem(element: SchoolClass) {
   }
 
-  deleteItem(module: SchoolClass) {
+  deleteItem(schoolClass: SchoolClass) {
+    this.schoolClassService.deleteSchoolClass(schoolClass)
+    console.log(this.schoolClassService.schoolClasses);
+    this.updateTable();
   }
 
-  addItem(module: SchoolClass) {
+  addItem(schoolClass: SchoolClass) {
+    this.schoolClassService.addSchoolClass(schoolClass)
+
   }
 
   updateTable() {
+    this.table.renderRows()
   }
-
 }
