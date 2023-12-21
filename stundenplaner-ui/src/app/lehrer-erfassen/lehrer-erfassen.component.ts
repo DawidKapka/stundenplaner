@@ -43,14 +43,18 @@ export class LehrerErfassenComponent implements OnInit {
       width: '600px',
     });
 
-
     dialogRef.afterClosed().subscribe((result) => {
-      // this.addItem(result)
-      // this.updateTable();
+       this.addItem(result)
+       this.updateTable();
     });
   }
 
-/*  deleteItem(module: Teacher) {
+  // change school to teacher
+
+  editItem(element: Teacher) {
+  }
+
+  deleteItem(module: Teacher) {
     this.moduleService.deleteModule(module)
     console.log(this.moduleService.schoolModules);
     this.updateTable();
@@ -63,5 +67,5 @@ export class LehrerErfassenComponent implements OnInit {
 
   updateTable() {
     this.table.renderRows()
-  }*/
+  }
 }
