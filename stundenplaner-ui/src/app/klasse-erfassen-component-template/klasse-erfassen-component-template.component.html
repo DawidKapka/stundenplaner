@@ -1,0 +1,25 @@
+<div class="erfassen-popup">
+    <h1 id="popupTitle">Klasse erfassen</h1>
+    <form>
+        <mat-form-field class="full-width">
+            <input [(ngModel)]="schoolClass.name" [ngModelOptions]="{ standalone: true }" matInput placeholder="Name"/>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input [(ngModel)]="schoolClass.daysAvailable" [ngModelOptions]="{ standalone: true }" matInput placeholder="verfügbare Tage"/>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input [(ngModel)]="schoolClass.modules" [ngModelOptions]="{ standalone: true }" matInput placeholder="Fächer"/>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input [(ngModel)]="schoolClass.hasBasislehrjahr" [ngModelOptions]="{ standalone: true }" matInput placeholder="Basislehrjahr"/>
+        </mat-form-field>
+
+        <div class="button-container" mat-dialog-actions>
+            <button mat-button mat-dialog-close color="warn">Abbrechen</button>
+            <button mat-button mat-dialog-close color="primary"  id="addSubject" [mat-dialog-close]="schoolClass">Klasse hinzufügen</button>
+        </div>
+    </form>
+</div>
