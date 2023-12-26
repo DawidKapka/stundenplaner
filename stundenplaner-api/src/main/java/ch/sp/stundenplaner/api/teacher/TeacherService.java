@@ -1,7 +1,8 @@
 package ch.sp.stundenplaner.api.teacher;
 
 import ch.sp.stundenplaner.api.dto.TeacherListDto;
-import com.dk.stundenplaner.model.Teacher;
+import ch.sp.stundenplaner.api.mapper.TeacherEntityMapper;
+import com.dk.stundenplaner.entity.TeacherEntity;
 import com.dk.stundenplaner.repository.TeacherRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -15,13 +16,19 @@ public class TeacherService {
     private TeacherRepository respository;
 
     public void saveTeachers(TeacherListDto dto) {
-        respository.saveTeachers(dto.getTeachers());
+        final List<TeacherEntity> entities = dto.getTeachers()
+                .stream()
+                .map(TeacherEntityMapper::mapToEntity)
+                .toList();
+        respository.saveTeachers(entities);
     }
 
     public TeacherListDto readTeachers() {
-        final List<Teacher> teachers = respository.readTeachers();
+        final List<TeacherEntity> teachers = respository.readTeachers();
         return TeacherListDto.builder()
-                .teachers(teachers)
+                .teachers(teachers.stream()
+                        .map(TeacherEntityMapper::mapToModel)
+                        .toList())
                 .build();
     }
 }

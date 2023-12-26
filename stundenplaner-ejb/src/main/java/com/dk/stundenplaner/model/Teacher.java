@@ -1,6 +1,5 @@
 package com.dk.stundenplaner.model;
 
-
 import lombok.*;
 
 import java.util.ArrayList;

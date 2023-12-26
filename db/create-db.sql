@@ -1,23 +1,22 @@
-use master;
 drop database if exists stundenplaner;
 create database stundenplaner;
 use stundenplaner;
 
 create table class(
-    classId integer,
+    classId integer auto_increment,
     className varchar(1000) not null,
     primary key (classId)
 );
 
 create table module(
-    moduleId integer,
+    moduleId integer auto_increment,
     moduleName varchar(1000) not null,
     duration varchar(100) not null,
     primary key (moduleId)
 );
 
 create table teacher(
-    teacherId integer,
+    teacherId integer auto_increment,
     firstname varchar(1000) not null,
     lastname varchar(1000) not null,
     shortcut varchar(100) not null,
@@ -26,13 +25,13 @@ create table teacher(
 );
 
 create table room(
-    roomId integer,
+    roomId integer auto_increment,
     roomName varchar(1000) not null,
     primary key (roomId)
 );
 
 create table teacher_available_days(
-    teacherAvailableDayId integer,
+    teacherAvailableDayId integer auto_increment,
     fk_teacherId integer not null,
     day varchar(250) not null,
     primary key (teacherAvailableDayId),
@@ -40,7 +39,7 @@ create table teacher_available_days(
 );
 
 create table class_unavailable_days(
-    classUnavailableDayId integer,
+    classUnavailableDayId integer auto_increment,
     fk_classId integer not null,
     day varchar(250) not null,
     primary key (classUnavailableDayId),
@@ -48,7 +47,7 @@ create table class_unavailable_days(
 );
 
 create table teacher_modules(
-    teacherModuleId integer,
+    teacherModuleId integer auto_increment,
     fk_teacherId integer not null,
     fk_moduleId integer not null,
     primary key (teacherModuleId),
@@ -57,11 +56,11 @@ create table teacher_modules(
 );
 
 create table class_modules(
-    classModuleId integer,
+    classModuleId integer auto_increment,
     fk_classId integer not null,
     fk_moduleId integer not null,
     primary key (classModuleId),
     foreign key (fk_classId) references class(classId),
     foreign key (fk_moduleId) references module(moduleId)
-)
+);
 

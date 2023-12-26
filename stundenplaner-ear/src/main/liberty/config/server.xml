@@ -3,6 +3,7 @@
         <feature>restfulWS-3.1</feature>
         <feature>cdi-4.0</feature>
         <feature>persistence-3.1</feature>
+        <feature>jdbc-4.3</feature>
     </featureManager>
     <variable name="default.http.port" defaultValue="9080" />
     <variable name="default.https.port" defaultValue="9443" />
@@ -13,12 +14,18 @@
     <enterpriseApplication id="stundenplaner-ear"
                            location="stundenplaner-ear-1.0-SNAPSHOT.ear"
                            name="stundenplaner-ear" />
-    <dataSource jndiName="jdbc/stundenplaner">
-        <properties.microsoft.sqlserver serverName="localhost" portNumber="1433"
-                                        databaseName="stundenplaner"
-                                        user="sa"
-                                        password="Secure123."/>
 
+    <library id="jdbcLib">
+        <fileset dir="jdbc" includes="*.jar"/>
+    </library>
+
+    <dataSource jndiName="jdbc/stundenplaner">
+        <jdbcDriver libraryRef="jdbcLib"/>
+        <properties serverName="127.0.0.1" portNumber="3306"
+                    databaseName="stundenplaner"
+                    user="stundenplaner"
+                    password="Verygoodpassword123"/>
     </dataSource>
+
     <logging traceSpecification="JPA=all" />
 </server>

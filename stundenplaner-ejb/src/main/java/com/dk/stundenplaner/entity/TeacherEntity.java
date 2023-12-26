@@ -1,4 +1,4 @@
-package com.dk.stundenplaner.dao;
+package com.dk.stundenplaner.entity;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -10,13 +10,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 import jakarta.persistence.GenerationType;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Table(name = "class")
-@NamedQuery(name = "Teacher.findAll", query = "SELECT e FROM Teacher e")
-@NamedQuery(name = "Teacher.findTeacher", query = "SELECT e FROM Teacher e WHERE "
+@Table(name = "teacher")
+@NamedQuery(name = "Teacher.findAll", query = "SELECT t FROM TeacherEntity t")
+@NamedQuery(name = "Teacher.findTeacher", query = "SELECT e FROM TeacherEntity e WHERE "
         + "e.firstname = :firstname AND e.lastname = :lastname AND e.shortcut = :shortcut AND e.pensum = :pensum")
-public class Teacher implements Serializable {
+@Getter
+@Setter
+public class TeacherEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,62 +37,23 @@ public class Teacher implements Serializable {
     @Column(name = "pensum")
     private String pensum;
 
-    public Teacher() {
+    public TeacherEntity() {
     }
 
-    public Teacher(String firstname, String lastname, String shortcut, String pensum) {
+    public TeacherEntity(String firstname, String lastname, String shortcut, String pensum) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.shortcut = shortcut;
         this.pensum = pensum;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getlastname() {
-        return lastname;
-    }
-
-    public void setlastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public void setShortcut(String shortcut) {
-        this.shortcut = shortcut;
-    }
-
-    public String getShortcut() {
-        return shortcut;
-    }
-
-    public String getPensum() {
-        return pensum;
-    }
-
-    public void setPensum(String pensum) {
-        this.pensum = pensum;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Teacher teacher = (Teacher) o;
-        return id == teacher.id && Objects.equals(firstname, teacher.firstname) && Objects.equals(lastname, teacher.lastname) && Objects.equals(shortcut, teacher.shortcut) && Objects.equals(pensum, teacher.pensum);
+        TeacherEntity teacherEntity = (TeacherEntity) o;
+        return id == teacherEntity.id && Objects.equals(firstname, teacherEntity.firstname) && Objects.equals(lastname, teacherEntity.lastname) && Objects.equals(shortcut, teacherEntity.shortcut) && Objects.equals(pensum, teacherEntity.pensum);
     }
 
     @Override
