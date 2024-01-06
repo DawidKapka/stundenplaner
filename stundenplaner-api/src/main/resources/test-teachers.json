@@ -3,7 +3,7 @@
     "firstname": "Peter",
     "lastname": "Nussbaumer",
     "shortcut": "pnu",
-    "pensum": 60,
+    "pensum": 16,
     "availableDays": [
       "MONDAY_MORNING",
       "MONDAY_AFTERNOON",
@@ -24,7 +24,7 @@
     "firstname": "Alfred",
     "lastname": "Kaufmann",
     "shortcut": "aka",
-    "pensum": 100,
+    "pensum": 24,
     "availableDays": [
       "MONDAY_MORNING",
       "MONDAY_AFTERNOON",
@@ -48,7 +48,7 @@
     "firstname": "Sigfried",
     "lastname": "Mueller",
     "shortcut": "smu",
-    "pensum": 20,
+    "pensum": 6,
     "availableDays": [
       "TUESDAY_MORNING",
       "THURSDAY_AFTERNOON"
@@ -62,7 +62,7 @@
     "firstname": "Mark",
     "lastname": "Forster",
     "shortcut": "mfo",
-    "pensum": 50,
+    "pensum": 12,
     "availableDays": [
       "MONDAY_AFTERNOON",
       "TUESDAY_MORNING",
@@ -81,7 +81,7 @@
     "firstname": "Heidi",
     "lastname": "Sommer",
     "shortcut": "hso",
-    "pensum": 80,
+    "pensum": 22,
     "availableDays": [
       "TUESDAY_MORNING",
       "TUESDAY_AFTERNOON",
@@ -104,7 +104,7 @@
     "firstname": "Christine",
     "lastname": "Steinmann",
     "shortcut": "cst",
-    "pensum": 100,
+    "pensum": 24,
     "availableDays": [
       "MONDAY_MORNING",
       "MONDAY_AFTERNOON",
@@ -130,7 +130,7 @@
     "firstname": "Roger",
     "lastname": "Himmler",
     "shortcut": "rhi",
-    "pensum": 40,
+    "pensum": 10,
     "availableDays": [
       "WEDNESDAY_MORNING",
       "WEDNESDAY_AFTERNOON",
