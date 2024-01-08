@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class SchoolClass extends AbstractModel {
+    private int id;
     private String name;
     @Builder.Default
     private List<Weekday> daysUnavailable = new ArrayList<>();

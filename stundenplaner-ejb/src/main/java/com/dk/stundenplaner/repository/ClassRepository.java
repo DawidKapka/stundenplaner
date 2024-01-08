@@ -1,19 +1,53 @@
 package com.dk.stundenplaner.repository;
 
-import com.dk.stundenplaner.model.SchoolClass;
+import com.dk.stundenplaner.entity.ClassEntity;
+import jakarta.annotation.Resource;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.transaction.UserTransaction;
 
-import java.util.ArrayList;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.util.List;
 
 @ApplicationScoped
 public class ClassRepository {
 
-    public void saveClasses(List<SchoolClass> classes) {
-        System.out.println(classes);
+    @Resource
+    UserTransaction userTransaction;
+
+    @PersistenceContext(unitName = "stundenplaner-jta-pu")
+    private EntityManager entityManager;
+
+    public void saveClasses(List<ClassEntity> classes) {
+        try {
+            userTransaction.begin();
+            classes.forEach(entity -> {
+                entityManager.persist(entity);
+            });
+            userTransaction.commit();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public List<SchoolClass> readClasses() {
-        return new ArrayList<>();
+    public List<ClassEntity> readClasses() {
+        return entityManager.createNamedQuery("findAllClasses", ClassEntity.class).getResultList();
+    }
+
+    public ClassEntity readClass(String id) {
+        return entityManager.createNamedQuery("findClass", ClassEntity.class)
+                .setParameter("id", id)
+                .getSingleResult();
+    }
+
+    public void deleteClass(String id) {
+        try {
+            userTransaction.begin();
+            final ClassEntity entity = readClass(id);
+            entityManager.remove(entity);
+            userTransaction.commit();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

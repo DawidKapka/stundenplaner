@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Teacher extends AbstractModel {
+    private int id;
     private String firstname;
     private String lastname;
     private String shortcut;

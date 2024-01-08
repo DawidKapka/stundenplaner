@@ -31,6 +31,23 @@ public class TeacherRepository {
     }
 
     public List<TeacherEntity> readTeachers() {
-        return entityManager.createNamedQuery("Teacher.findAll", TeacherEntity.class).getResultList();
+        return entityManager.createNamedQuery("findAllTeachers", TeacherEntity.class).getResultList();
+    }
+
+    public TeacherEntity readTeacher(String id) {
+        return entityManager.createNamedQuery("findTeacher", TeacherEntity.class)
+                .setParameter("id", Integer.valueOf(id))
+                .getSingleResult();
+    }
+
+    public void deleteTeacher(String id) {
+        try {
+            userTransaction.begin();
+            final TeacherEntity entity = readTeacher(id);
+            entityManager.remove(entity);
+            userTransaction.commit();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

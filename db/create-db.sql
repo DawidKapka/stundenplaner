@@ -11,6 +11,7 @@ create table class(
 create table module(
     moduleId integer auto_increment,
     moduleName varchar(1000) not null,
+    shortcut varchar(100) not null,
     duration varchar(100) not null,
     primary key (moduleId)
 );
@@ -30,20 +31,18 @@ create table room(
     primary key (roomId)
 );
 
-create table teacher_available_days(
-    teacherAvailableDayId integer auto_increment,
-    fk_teacherId integer not null,
-    day varchar(250) not null,
-    primary key (teacherAvailableDayId),
-    foreign key (fk_teacherId) references teacher(teacherId)
+create table teacher_weekday(
+    id int auto_increment,
+    teacherId int not null,
+    weekday varchar(1000) not null,
+    primary key (id)
 );
 
-create table class_unavailable_days(
-    classUnavailableDayId integer auto_increment,
-    fk_classId integer not null,
-    day varchar(250) not null,
-    primary key (classUnavailableDayId),
-    foreign key (fk_classId) references class(classId)
+create table class_weekday(
+    id int auto_increment,
+    classId int not null,
+    weekday varchar(1000) not null,
+    primary key (id)
 );
 
 create table teacher_modules(

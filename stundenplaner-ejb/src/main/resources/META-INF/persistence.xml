@@ -3,6 +3,8 @@
     <persistence-unit name="stundenplaner-jta-pu" transaction-type="JTA">
         <jta-data-source>jdbc/stundenplaner</jta-data-source>
         <class>com.dk.stundenplaner.entity.TeacherEntity</class>
+        <class>com.dk.stundenplaner.entity.ModuleEntity</class>
+        <class>com.dk.stundenplaner.entity.ClassEntity</class>
         <properties>
             <property name="jakarta.persistence.schema-generation.database.action" value="create" />
             <property name="hibernate.dialect"    value="org.hibernate.dialect.MySQLDialect" />
