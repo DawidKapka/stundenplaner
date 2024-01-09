@@ -44,5 +44,6 @@ export class OverviewComponent implements OnInit {
 
   openSchedule(teacher: Teacher) {
     //blablabla
+    this.teacherSelected = true
   }
 }
