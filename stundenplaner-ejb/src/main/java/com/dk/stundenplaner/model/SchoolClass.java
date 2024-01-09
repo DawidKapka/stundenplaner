@@ -18,4 +18,5 @@ public class SchoolClass extends AbstractModel {
     private List<Weekday> daysUnavailable = new ArrayList<>();
     @Builder.Default
     private List<String> modules = new ArrayList<>();
+    private boolean basislehrjahr;
 }

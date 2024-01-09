@@ -5,6 +5,7 @@ use stundenplaner;
 create table class(
     classId integer auto_increment,
     className varchar(1000) not null,
+    basislehrjahr boolean not null,
     primary key (classId)
 );
 
@@ -28,6 +29,7 @@ create table teacher(
 create table room(
     roomId integer auto_increment,
     roomName varchar(1000) not null,
+    roomType varchar(1000) not null,
     primary key (roomId)
 );
 

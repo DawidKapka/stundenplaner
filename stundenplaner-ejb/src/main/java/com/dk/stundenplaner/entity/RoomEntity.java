@@ -27,6 +27,9 @@ public class RoomEntity implements Serializable {
     @Column(name = "roomName")
     private String name;
 
+    @Column(name = "roomType")
+    private String type;
+
     public RoomEntity() {
     }
 

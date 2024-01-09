@@ -38,6 +38,8 @@ public class ClassEntity implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "fk_moduleId")
     )
     private List<ModuleEntity> modules;
+    @Column(name = "basislehrjahr")
+    private boolean basislehrjahr;
 
     public ClassEntity() {
 

@@ -11,4 +11,5 @@ import lombok.*;
 public class Room extends AbstractModel {
     private int id;
     private String name;
+    private Roomtype type;
 }

@@ -17,6 +17,7 @@ public class ClassEntityMapper {
                 .map(Enum::name)
                 .toList());
         entity.setModules(modules);
+        entity.setBasislehrjahr(schoolClass.isBasislehrjahr());
         return entity;
     }
 
@@ -30,6 +31,7 @@ public class ClassEntityMapper {
                 .modules(entity.getModules().stream()
                         .map(ModuleEntity::getShortcut)
                         .toList())
+                .basislehrjahr(entity.isBasislehrjahr())
                 .build();
     }
 }
