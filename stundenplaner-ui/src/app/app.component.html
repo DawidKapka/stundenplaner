@@ -1,60 +1,62 @@
 <mat-toolbar class="header" color="primary">
-    Etwas erfassen
+    Stundenplaner
 </mat-toolbar>
-<mat-stepper headerPosition="bottom" #stepper>
+<div *ngIf="!erfassenDone">
+    <mat-stepper headerPosition="bottom" #stepper>
 
-    <mat-step>
-        <ng-template matStepLabel>Fächer erfassen</ng-template>
+        <mat-step>
+            <ng-template matStepLabel>Fächer erfassen</ng-template>
 
-        <div class="content">
-            <app-faecher-erfassen></app-faecher-erfassen>
-        </div>
-        <div class="footer">
-            <button mat-raised-button color="warn" matStepperNext class="nav-button next">Weiter</button>
-        </div>
-    </mat-step>
+            <div class="content">
+                <app-faecher-erfassen></app-faecher-erfassen>
+            </div>
+            <div class="footer">
+                <button mat-raised-button color="warn" matStepperNext class="nav-button next">Weiter</button>
+            </div>
+        </mat-step>
 
-    <mat-step>
-        <ng-template matStepLabel>Lehrer erfassen</ng-template>
+        <mat-step>
+            <ng-template matStepLabel>Lehrer erfassen</ng-template>
 
-        <div class="content">
-            <app-lehrer-erfassen></app-lehrer-erfassen>
-        </div>
+            <div class="content">
+                <app-lehrer-erfassen></app-lehrer-erfassen>
+            </div>
 
-        <div class="footer">
-            <button mat-raised-button color="warn" matStepperPrevious class="nav-button back">Zurück</button>
-            <button mat-raised-button color="warn" matStepperNext class="nav-button next">Weiter</button>
-        </div>
+            <div class="footer">
+                <button mat-raised-button color="warn" matStepperPrevious class="nav-button back">Zurück</button>
+                <button mat-raised-button color="warn" matStepperNext class="nav-button next">Weiter</button>
+            </div>
 
-    </mat-step>
+        </mat-step>
 
-    <mat-step>
-        <ng-template matStepLabel>Zimmer erfassen</ng-template>
+        <mat-step>
+            <ng-template matStepLabel>Zimmer erfassen</ng-template>
 
-        <div class="content">
-            <app-zimmer-erfassen></app-zimmer-erfassen>
-        </div>
+            <div class="content">
+                <app-zimmer-erfassen></app-zimmer-erfassen>
+            </div>
 
-        <div class="footer">
-            <button mat-raised-button color="warn" matStepperPrevious class="nav-button back">Zurück</button>
-            <button mat-raised-button color="warn" matStepperNext class="nav-button next">Weiter</button>
-        </div>
-    </mat-step>
+            <div class="footer">
+                <button mat-raised-button color="warn" matStepperPrevious class="nav-button back">Zurück</button>
+                <button mat-raised-button color="warn" matStepperNext class="nav-button next">Weiter</button>
+            </div>
+        </mat-step>
 
-    <mat-step>
-        <ng-template matStepLabel>Klasse erfassen</ng-template>
+        <mat-step>
+            <ng-template matStepLabel>Klasse erfassen</ng-template>
 
-        <div class="content">
-            <app-klasse-erfassen></app-klasse-erfassen>
-        </div>
+            <div class="content">
+                <app-klasse-erfassen></app-klasse-erfassen>
+            </div>
 
-        <div class="footer">
-            <button mat-raised-button color="warn" matStepperPrevious class="nav-button back">Zurück</button>
-            <button mat-raised-button color="warn" (click)="generateSchedule()" class="nav-button next">Abschliessen</button>
-        </div>
-    </mat-step>
+            <div class="footer">
+                <button mat-raised-button color="warn" matStepperPrevious class="nav-button back">Zurück</button>
+                <button mat-raised-button color="warn" [routerLink]="'/overview'" (click)="erfassenDone = true"
+                        class="nav-button next">Stundenpläne generieren
+                </button>
+            </div>
+        </mat-step>
+    </mat-stepper>
+</div>
 
-
-</mat-stepper>
-
-
+<router-outlet></router-outlet>

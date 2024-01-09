@@ -22,6 +22,11 @@ import {HttpClientModule} from '@angular/common/http';
 import { FaecherErfassenComponentTemplateComponent } from './faecher-erfassen-component-template/faecher-erfassen-component-template.component';
 import {FormsModule} from '@angular/forms';
 import {LehrerErfassenComponentTemplateComponent} from './lehrer-erfassen-component-template/lehrer-erfassen-component-template.component';
+import {ZimmerErfassenComponentTemplateComponent} from './zimmer-erfassen-component-template/zimmer-erfassen-component-template.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {KlasseErfassenComponentTemplateComponent} from "./klasse-erfassen-component-template/klasse-erfassen-component-template.component";
+import { OverviewComponent } from './overview/overview.component';
 
 
 @NgModule({
@@ -36,7 +41,10 @@ import {LehrerErfassenComponentTemplateComponent} from './lehrer-erfassen-compon
         ZimmerErfassenComponent,
         KlasseErfassenComponent,
         FaecherErfassenComponentTemplateComponent,
-        LehrerErfassenComponentTemplateComponent
+        LehrerErfassenComponentTemplateComponent,
+        ZimmerErfassenComponentTemplateComponent,
+        KlasseErfassenComponentTemplateComponent,
+        OverviewComponent
     ],
     imports: [
         BrowserModule,
@@ -51,7 +59,9 @@ import {LehrerErfassenComponentTemplateComponent} from './lehrer-erfassen-compon
         MatCardModule,
         MatInputModule,
         MatDialogModule,
-        FormsModule
+        FormsModule,
+        MatCheckboxModule,
+        MatExpansionModule
     ]
 })
 export class AppModule {

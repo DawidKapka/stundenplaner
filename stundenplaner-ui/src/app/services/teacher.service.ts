@@ -11,7 +11,7 @@ export class TeacherService {
     constructor() {
     }
 
-    getTeacher(): Teacher[] {
+    getTeachers(): Teacher[] {
         return this.teachers;
     }
 

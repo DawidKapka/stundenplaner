@@ -36,14 +36,14 @@ export class FaecherErfassenComponent implements OnInit {
     this.http.get('faecher-erfassen-template.component.html', { responseType: 'text' })
 
     this.showPopup = true;
-    const dialogRef = this.dialog.open(FaecherErfassenComponentTemplateComponent, {
+    const dialogRef  = this.dialog.open(FaecherErfassenComponentTemplateComponent, {
       width: '600px',
     });
 
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.addItem(result)
-      this.updateTable();
+        this.addItem(result)
+        this.updateTable();
     });
   }
 
@@ -52,12 +52,11 @@ export class FaecherErfassenComponent implements OnInit {
 
   deleteItem(module: SchoolModules) {
     this.moduleService.deleteModule(module)
-    this.updateTable();
   }
 
   addItem(module: SchoolModules) {
     this.moduleService.addSchoolModule(module)
-
+    this.updateTable();
   }
 
   updateTable() {
