@@ -1,42 +1,43 @@
 <h1>Generierte Stundenpläne</h1>
 
-<div class="teachers">
+<div class="teachers" *ngIf="!teacherSelected">
     <mat-list>
         <mat-list-item *ngFor="let teacher of teachers" (click)="openSchedule(teacher)">
             {{teacher.name}}
         </mat-list-item>
     </mat-list>
 </div>
-
-<div class="parent">
-    <div class="titleDay"> Tag </div>
-    <div class="titleMorning1">Morgen 1 </div>
-    <div class="titleMorning2">Morgen 2 </div>
-    <div class="titleNoon1">Nachmittag 1 </div>
-    <div class="titleNoon2">Nachmittag 2 </div>
-    <div class="titleMonday">Montag </div>
-    <div class="div7"> </div>
-    <div class="div8"> </div>
-    <div class="div9"> </div>
-    <div class="div10"> </div>
-    <div class="titleTuesday">Dienstag </div>
-    <div class="div12"> </div>
-    <div class="div13"> </div>
-    <div class="div14"> </div>
-    <div class="div15"> </div>
-    <div class="titleWednesday">Mittwoch </div>
-    <div class="div17"> </div>
-    <div class="div18"> </div>
-    <div class="div19"> </div>
-    <div class="div20"> </div>
-    <div class="titleThursday">Donnerstag </div>
-    <div class="div22"> </div>
-    <div class="div23"> </div>
-    <div class="div24"> </div>
-    <div class="div25"> </div>
-    <div class="titleFriday">Freitag </div>
-    <div class="div28"> </div>
-    <div class="div29"> </div>
-    <div class="div30"> </div>
-    <div class="div31"> </div>
+<div *ngIf="teacherSelected">
+    <div class="parent">
+        <div class="titleDay"> Tag</div>
+        <div class="titleMorning1">Morgen 1</div>
+        <div class="titleMorning2">Morgen 2</div>
+        <div class="titleNoon1">Nachmittag 1</div>
+        <div class="titleNoon2">Nachmittag 2</div>
+        <div class="titleMonday">Montag</div>
+        <div class="div7"></div>
+        <div class="div8"></div>
+        <div class="div9"></div>
+        <div class="div10"></div>
+        <div class="titleTuesday">Dienstag</div>
+        <div class="div12"></div>
+        <div class="div13"></div>
+        <div class="div14"></div>
+        <div class="div15"></div>
+        <div class="titleWednesday">Mittwoch</div>
+        <div class="div17"></div>
+        <div class="div18"></div>
+        <div class="div19"></div>
+        <div class="div20"></div>
+        <div class="titleThursday">Donnerstag</div>
+        <div class="div22"></div>
+        <div class="div23"></div>
+        <div class="div24"></div>
+        <div class="div25"></div>
+        <div class="titleFriday">Freitag</div>
+        <div class="div28"></div>
+        <div class="div29"></div>
+        <div class="div30"></div>
+        <div class="div31"></div>
+    </div>
 </div>

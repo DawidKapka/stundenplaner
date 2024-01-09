@@ -21,6 +21,8 @@ export class OverviewComponent implements OnInit {
   schoolClasses: SchoolClass[] = this.schoolClassService.getSchoolClasses();
   teachers: Teacher[] = this.teacherService.getTeachers();
 
+  teacherSelected: boolean = false;
+
   constructor(
       private schoolModuleService: SchoolModuleService,
       private roomService: RoomService,
