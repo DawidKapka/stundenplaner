@@ -22,8 +22,11 @@ import {HttpClientModule} from '@angular/common/http';
 import { FaecherErfassenComponentTemplateComponent } from './faecher-erfassen-component-template/faecher-erfassen-component-template.component';
 import {FormsModule} from '@angular/forms';
 import {LehrerErfassenComponentTemplateComponent} from './lehrer-erfassen-component-template/lehrer-erfassen-component-template.component';
-import { KlasseErfassenComponentTemplateComponent } from './klasse-erfassen-component-template/klasse-erfassen-component-template.component';
-import { ZimmerErfassenComponentTemplateComponent } from './zimmer-erfassen-component-template/zimmer-erfassen-component-template.component';
+import {ZimmerErfassenComponentTemplateComponent} from './zimmer-erfassen-component-template/zimmer-erfassen-component-template.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {KlasseErfassenComponentTemplateComponent} from "./klasse-erfassen-component-template/klasse-erfassen-component-template.component";
+import { OverviewComponent } from './overview/overview.component';
 
 
 @NgModule({
@@ -39,8 +42,9 @@ import { ZimmerErfassenComponentTemplateComponent } from './zimmer-erfassen-comp
         KlasseErfassenComponent,
         FaecherErfassenComponentTemplateComponent,
         LehrerErfassenComponentTemplateComponent,
+        ZimmerErfassenComponentTemplateComponent,
         KlasseErfassenComponentTemplateComponent,
-        ZimmerErfassenComponentTemplateComponent
+        OverviewComponent
     ],
     imports: [
         BrowserModule,
@@ -55,7 +59,9 @@ import { ZimmerErfassenComponentTemplateComponent } from './zimmer-erfassen-comp
         MatCardModule,
         MatInputModule,
         MatDialogModule,
-        FormsModule
+        FormsModule,
+        MatCheckboxModule,
+        MatExpansionModule
     ]
 })
 export class AppModule {

@@ -2,27 +2,59 @@
     <h1 id="popupTitle">Lehrer erfassen</h1>
     <form>
         <mat-form-field class="full-width">
-            <input [(ngModel)]="schoolTeacher.shortcut" [ngModelOptions]="{ standalone: true }" matInput placeholder="Abkürzung"/>
+            <input [(ngModel)]="schoolTeacher.shortcut" [ngModelOptions]="{ standalone: true }" matInput
+                   placeholder="Abkürzung"/>
+        </mat-form-field>
+
+
+        <mat-form-field class="full-width">
+            <input [(ngModel)]="schoolTeacher.name" [ngModelOptions]="{ standalone: true }" matInput
+                   placeholder="Name"/>
         </mat-form-field>
 
         <mat-form-field class="full-width">
-            <input [(ngModel)]="schoolTeacher.name" [ngModelOptions]="{ standalone: true }" matInput placeholder="Name"/>
+            <input [(ngModel)]="schoolTeacher.pensum" [ngModelOptions]="{ standalone: true }" matInput
+                   placeholder="Pensum"/>
         </mat-form-field>
 
-        <mat-form-field class="full-width">
-            <input [(ngModel)]="schoolTeacher.pensum" [ngModelOptions]="{ standalone: true }" matInput placeholder="Pensum"/>
-        </mat-form-field>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Verfügbare Tage
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div *ngFor="let day of schoolDays">
+                <mat-checkbox name="days"
+                  (change)="updateCheckboxDay(day, $event.checked)">
+                    {{day}}
+                </mat-checkbox>
+                <br>
+            </div>
+        </mat-expansion-panel>
+        <br>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Fächer
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div *ngFor="let module of schoolModules">
+                <mat-checkbox name="faecher"
+                  (change)="updateCheckboxModule(module, $event.checked)">
+                    {{module.name}}
+                </mat-checkbox>
+            </div>
+        </mat-expansion-panel>
 
-        <mat-form-field class="full-width">
-            <input [(ngModel)]="schoolTeacher.availableDays" [ngModelOptions]="{ standalone: true }" matInput placeholder="Verfügbare Tage"/>
-        </mat-form-field>
-
-        <mat-form-field class="full-width">
-            <input [(ngModel)]="schoolTeacher.modules" [ngModelOptions]="{ standalone: true }" matInput placeholder="Fächer"/>
-        </mat-form-field>
         <div class="button-container" mat-dialog-actions>
             <button mat-button mat-dialog-close color="warn">Abbrechen</button>
-            <button mat-button mat-dialog-close color="primary"  id="addSubject" [mat-dialog-close]="schoolTeacher">Lehrer hinzufügen</button>
+            <button mat-button mat-dialog-close color="primary" id="addSubject" [mat-dialog-close]="schoolTeacher">
+                Lehrer hinzufügen
+            </button>
         </div>
     </form>
 </div>

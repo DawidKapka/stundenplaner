@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Roomtype} from '../enums/roomtype';
-import {Room} from '../interfaces/Room';
+import {Room} from "../interfaces/Room";
+import {Roomtype} from "../enums/roomtype";
+import {Days} from "../enums/days";
 
 @Component({
   selector: 'app-zimmer-erfassen-component-template',
@@ -9,11 +10,21 @@ import {Room} from '../interfaces/Room';
 })
 export class ZimmerErfassenComponentTemplateComponent implements OnInit {
 
-  schoolRoom: Room = {name: '', roomType: Roomtype.SCHULZIMMER};
+  room: Room = {name: '', roomType: 1};
+
+  roomType: string[] = Object.keys(Roomtype).filter((v) => isNaN(Number(v)))
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  updateCheckboxRoomtype(roomType: string, checked: boolean) {
+    const roomEnum: Roomtype = Roomtype[roomType as keyof typeof Roomtype];
+
+    if (checked) {
+      this.room.roomType = roomEnum
+    }
+  }
 }

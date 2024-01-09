@@ -6,5 +6,5 @@ export interface Teacher {
     shortcut: string;
     pensum: number;
     availableDays: Days[];
-    modules: SchoolModules[];
+    schoolModules: SchoolModules[];
 }

@@ -7,8 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'stundenplaner-ui';
-
+  erfassenDone = false
     generateSchedule() {
 
+    }
+
+    showOverview() {
+        this.erfassenDone = true;
     }
 }

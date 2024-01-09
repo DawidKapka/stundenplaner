@@ -1,17 +1,29 @@
 <div class="erfassen-popup">
-    <h1 id="popupTitle">Fach erfassen</h1>
+    <h1 id="popupTitle">Zimmer erfassen</h1>
     <form>
         <mat-form-field class="full-width">
-            <input [(ngModel)]="schoolRoom.name" [ngModelOptions]="{ standalone: true }" matInput placeholder="Name"/>
+            <input [(ngModel)]="room.name" [ngModelOptions]="{ standalone: true }" matInput placeholder="Abkürzung"/>
         </mat-form-field>
 
-        <mat-form-field class="full-width">
-            <input [(ngModel)]="schoolRoom.roomType" [ngModelOptions]="{ standalone: true }" matInput placeholder="Zimmertyp"/>
-        </mat-form-field>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Zimmertyp
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div *ngFor="let room of roomType">
+                <mat-checkbox
+                        (change)="updateCheckboxRoomtype(room, $event.checked)">
+                    {{room}}
+                </mat-checkbox>
+            </div>
+        </mat-expansion-panel>
 
         <div class="button-container" mat-dialog-actions>
             <button mat-button mat-dialog-close color="warn">Abbrechen</button>
-            <button mat-button mat-dialog-close color="primary"  id="addSubject" [mat-dialog-close]="schoolRoom">Fach hinzufügen</button>
+            <button mat-button mat-dialog-close color="primary"  id="addSubject" [mat-dialog-close]="room">Zimmer hinzufügen</button>
         </div>
     </form>
 </div>

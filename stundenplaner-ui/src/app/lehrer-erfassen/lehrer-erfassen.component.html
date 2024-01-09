@@ -15,7 +15,7 @@
 
             <ng-container matColumnDef="availableDays">
                 <th mat-header-cell *matHeaderCellDef> Verfügbare Tage</th>
-                <td mat-cell *matCellDef="let element"> {{element.availableDays}} </td>
+                <td mat-cell *matCellDef="let element"> {{ getDaysText(element.availableDays) }} </td>
             </ng-container>
 
             <ng-container matColumnDef="pensum">
@@ -23,9 +23,9 @@
                 <td mat-cell *matCellDef="let element"> {{element.pensum}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="modules">
+            <ng-container matColumnDef="schoolModules">
                 <th mat-header-cell *matHeaderCellDef> Fächer</th>
-                <td mat-cell *matCellDef="let element"> {{element.modules}} </td>
+                <td mat-cell *matCellDef="let element"> {{ getSchoolModules(element.schoolModules) }} </td>
             </ng-container>
 
             <ng-container matColumnDef="action">

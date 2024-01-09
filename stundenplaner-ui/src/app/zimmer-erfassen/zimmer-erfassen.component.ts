@@ -1,11 +1,16 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+import {SchoolClass} from "../interfaces/schoolClass";
 import {Room} from "../interfaces/Room";
 import {MatDialog} from "@angular/material/dialog";
 import {DomSanitizer} from "@angular/platform-browser";
 import {HttpClient} from "@angular/common/http";
+import {TeacherService} from "../services/teacher.service";
 import {RoomService} from "../services/room.service";
-import {ZimmerErfassenComponentTemplateComponent} from '../zimmer-erfassen-component-template/zimmer-erfassen-component-template.component';
-import {MatTable} from '@angular/material/table';
+import {
+  ZimmerErfassenComponentTemplateComponent
+} from "../zimmer-erfassen-component-template/zimmer-erfassen-component-template.component";
+import {MatTable} from "@angular/material/table";
+import {Roomtype} from "../enums/roomtype";
 
 @Component({
   selector: 'app-zimmer-erfassen',
@@ -25,40 +30,54 @@ export class ZimmerErfassenComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  rooms: Room[] = [
-  ]
+  rooms: Room[] = this.roomService.getRooms()
 
   displayedColumns: string[] = ['name', 'roomType', 'action'];
 
   showPopup: boolean = false;
 
   openPopup() {
+    this.http.get('zimmer-erfassen-template.component.html', { responseType: 'text' })
+
     this.showPopup = true;
     const dialogRef = this.dialog.open(ZimmerErfassenComponentTemplateComponent, {
       width: '600px',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.addItem(result)
+      this.addItem(result as Room)
       this.updateTable();
-    });
-  }
+    });  }
 
-  editItem(element: Room) {
+  editItem(room: Room) {
+
   }
 
   deleteItem(room: Room) {
-    this.roomService.deleteRoom(room)
-    console.log(this.roomService.rooms);
-    this.updateTable();
+
   }
 
   addItem(room: Room) {
-    this.roomService.addRoom(room)
-
+    this.roomService.addRoom(room);
+    this.updateTable()
   }
 
   updateTable() {
     this.table.renderRows()
   }
+
+  getRoomTypeText(roomType: Roomtype): string {
+    switch (roomType) {
+      case Roomtype.LABORZIMMER:
+        return 'Laborzimmer';
+      case Roomtype.SCHULZIMMER:
+        return 'Schulzimmer';
+      case Roomtype.SPORTHALLE:
+        return 'Sporthalle';
+      default:
+        return '';
+    }
+  }
+
+
 }
