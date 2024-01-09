@@ -14,7 +14,7 @@ public class MapModulesToTeacherStep {
         teachers.forEach(teacher -> {
             final List<SchoolModule> teacherModules = teacher.getModules().stream()
                     .map(module -> modules.stream()
-                            .filter(m -> m.getModuleName().equals(module))
+                            .filter(m -> m.getName().equals(module))
                             .findFirst()
                             .orElse(null))
                     .toList();

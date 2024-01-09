@@ -4,6 +4,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="javaeeApplication" url="file://$PROJECT_DIR$/stundenplaner-ear" />
     <file type="web" url="file://$PROJECT_DIR$/stundenplaner-api" />
+    <file type="web" url="file://$PROJECT_DIR$/stundenplaner-ui" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -16,7 +17,6 @@
         <option value="$PROJECT_DIR$/stundenplaner-era/pom.xml" />
       </set>
     </option>
-    <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="corretto-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

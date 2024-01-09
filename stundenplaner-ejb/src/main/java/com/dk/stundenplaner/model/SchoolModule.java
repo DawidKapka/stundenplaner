@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class SchoolModule extends AbstractModel {
-    private String moduleName;
+    private String name;
     private String shortcut;
     private LessonDuration duration;
 }

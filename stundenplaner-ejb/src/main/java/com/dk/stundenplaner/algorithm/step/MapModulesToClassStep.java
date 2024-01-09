@@ -13,7 +13,7 @@ public class MapModulesToClassStep {
         final Map<SchoolClass, List<SchoolModule>> modulesForClass = new HashMap<>();
         classes.forEach(clazz -> {
             final List<SchoolModule> classModules = modules.stream()
-                    .filter(module -> clazz.getModules().contains(module.getModuleName()))
+                    .filter(module -> clazz.getModules().contains(module.getName()))
                     .toList();
             modulesForClass.put(clazz, classModules);
         });

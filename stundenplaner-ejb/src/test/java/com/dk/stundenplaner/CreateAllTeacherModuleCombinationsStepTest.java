@@ -54,9 +54,9 @@ public class CreateAllTeacherModuleCombinationsStepTest {
 
     private List<SchoolModule> createModuleList() {
         return Arrays.asList(
-                SchoolModule.builder().moduleName("M1").duration(LessonDuration.SINGLE).build(),
-                SchoolModule.builder().moduleName("M2").duration(LessonDuration.DOUBLE).build(),
-                SchoolModule.builder().moduleName("M3").duration(LessonDuration.TRIPLE).build()
+                SchoolModule.builder().name("M1").duration(LessonDuration.SINGLE).build(),
+                SchoolModule.builder().name("M2").duration(LessonDuration.DOUBLE).build(),
+                SchoolModule.builder().name("M3").duration(LessonDuration.TRIPLE).build()
         );
     }
 }

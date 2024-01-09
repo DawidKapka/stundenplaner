@@ -31,7 +31,7 @@ public class AlgorithmRunner {
     public Map<Teacher, List<ScheduleEntry>> run() {
         final Map<Teacher, List<ScheduleEntry>> teacherSchedules = new CreateEmptyTeacherSchedulesStep().create(teachers);
         final Map<Teacher, List<ScheduleEntry>> teachersWithModules = new AssignModulesToTeachersStep().assign(teacherSchedules, classes, modules);
-        final Map<Teacher, List<ScheduleEntry>> schedulesWithDays = new AssignScheduleToDaysStep().assign(teachersWithModules, classes);
+        //final Map<Teacher, List<ScheduleEntry>> schedulesWithDays = new AssignScheduleToDaysStep().assign(teachersWithModules, classes);
         return teachersWithModules;
     }
 

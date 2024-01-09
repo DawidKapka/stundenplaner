@@ -31,10 +31,10 @@ export class OverviewComponent implements OnInit {
 
 
   ngOnInit(): void {
-    axios.post('http://localhost:9080/api/v1/module', {modules: this.schoolModules}).then(() => {
-      axios.post('http://localhost:9080/api/v1/class', {classes: this.schoolClasses})
-      axios.post('http://localhost:9080/api/v1/teacher', {teachers: this.teachers})
-      axios.post('http://localhost:9080/api/v1/room', {teachers: this.rooms})
+    axios.post('http://localhost:9080/api/v1/module', {modules: this.schoolModules}, {headers: {'Content-Type': "text/plain"}}).then(() => {
+      axios.post('http://localhost:9080/api/v1/class', {classes: this.schoolClasses}, {headers: {'Content-Type': "text/plain"}})
+      axios.post('http://localhost:9080/api/v1/teacher', {teachers: this.teachers}, {headers: {'Content-Type': "text/plain"}})
+      axios.post('http://localhost:9080/api/v1/room', {teachers: this.rooms}, {headers: {'Content-Type': "text/plain"}})
     }
   )
   }
