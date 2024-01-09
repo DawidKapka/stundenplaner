@@ -7,6 +7,7 @@
         <groupId>com.sp</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+  <packaging>war</packaging>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>stundenplaner-ui</artifactId>
@@ -17,4 +18,31 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.2</version>
+        <executions>
+          <execution>
+            <id>default-war</id>
+            <phase>package</phase>
+            <goals>
+              <goal>war</goal>
+            </goals>
+            <configuration>
+              <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+              <webResources>
+                <resource>
+                  <directory>./dist</directory>
+                </resource>
+              </webResources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>

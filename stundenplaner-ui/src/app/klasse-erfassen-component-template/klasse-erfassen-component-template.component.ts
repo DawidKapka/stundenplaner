@@ -36,9 +36,9 @@ export class KlasseErfassenComponentTemplateComponent implements OnInit {
 
   updateCheckboxModule(module: SchoolModules, checked: boolean) {
     if (checked) {
-      this.schoolClass.modules.push(module);
+      this.schoolClass.modules.push(module.shortcut);
     } else {
-      this.schoolClass.modules = this.schoolClass.modules.filter(m => m !== module);
+      this.schoolClass.modules = this.schoolClass.modules.filter(m => m !== module.shortcut);
     }
   }
 

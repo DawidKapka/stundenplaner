@@ -82,7 +82,7 @@ public class CreateAllTeacherModuleCombinationsStep {
         int difference = capacity - modulesList.size();
         while (difference > 0) {
             modulesList.add(SchoolModule.builder()
-                    .moduleName("free")
+                    .name("free")
                     .duration(LessonDuration.SINGLE)
                     .build());
             difference--;

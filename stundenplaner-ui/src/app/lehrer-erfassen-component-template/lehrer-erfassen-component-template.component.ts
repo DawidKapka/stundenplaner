@@ -11,7 +11,7 @@ import {Days} from "../enums/days";
 })
 export class LehrerErfassenComponentTemplateComponent implements OnInit {
 
-  schoolTeacher: Teacher = {name: '', shortcut: '', pensum: 0, availableDays: [], schoolModules: []};
+  schoolTeacher: Teacher = {firstname: '', shortcut: '', pensum: 0, availableDays: [], schoolModules: []};
 
   schoolModules: SchoolModules[] = this.schoolModuleService.getSchoolModules();
 
@@ -29,7 +29,7 @@ export class LehrerErfassenComponentTemplateComponent implements OnInit {
   }
 
   update($event: Event) {
-    
+
   }
 
   updateCheckboxDay(day: string, checked: boolean) {

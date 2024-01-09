@@ -13,8 +13,8 @@ public class TeacherEntityMapper {
     public static TeacherEntity mapToEntity(Teacher teacher, List<ModuleEntity> modules) {
         final TeacherEntity entity = new TeacherEntity();
         entity.setId(teacher.getId());
-        entity.setFirstname(teacher.getFirstname());
-        entity.setLastname(teacher.getLastname());
+        entity.setFirstname(teacher.getFirstname() != null ? teacher.getFirstname() : "");
+        entity.setLastname(teacher.getLastname() != null ? teacher.getLastname() : "");
         entity.setShortcut(teacher.getShortcut());
         entity.setPensum(String.valueOf(teacher.getPensum()));
         entity.setAvailableDays(teacher.getAvailableDays()

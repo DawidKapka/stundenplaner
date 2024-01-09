@@ -3,7 +3,7 @@
 <div class="teachers" *ngIf="!teacherSelected">
     <mat-list>
         <mat-list-item *ngFor="let teacher of teachers" (click)="openSchedule(teacher)">
-            {{teacher.name}}
+            {{teacher.firstname}}
         </mat-list-item>
     </mat-list>
 </div>

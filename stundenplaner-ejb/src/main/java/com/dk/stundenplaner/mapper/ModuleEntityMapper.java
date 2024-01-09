@@ -8,15 +8,15 @@ public class ModuleEntityMapper {
 
     public static ModuleEntity mapToEntity(SchoolModule module) {
         final ModuleEntity entity = new ModuleEntity();
-        entity.setName(module.getModuleName());
+        entity.setName(module.getName());
         entity.setShortcut(module.getShortcut());
-        entity.setDuration(module.getDuration().name());
+        entity.setDuration(module.getDuration() != null ? module.getDuration().name() : "DOUBLE");
         return entity;
     }
 
     public static SchoolModule mapToModel(ModuleEntity entity) {
         return SchoolModule.builder()
-                .moduleName(entity.getName())
+                .name(entity.getName())
                 .shortcut(entity.getShortcut())
                 .duration(LessonDuration.valueOf(entity.getDuration()))
                 .build();
