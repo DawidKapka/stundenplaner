@@ -27,6 +27,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {KlasseErfassenComponentTemplateComponent} from "./klasse-erfassen-component-template/klasse-erfassen-component-template.component";
 import { OverviewComponent } from './overview/overview.component';
+import {MatListModule} from "@angular/material/list";
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { OverviewComponent } from './overview/overview.component';
         MatDialogModule,
         FormsModule,
         MatCheckboxModule,
-        MatExpansionModule
+        MatExpansionModule,
+        MatListModule
     ]
 })
 export class AppModule {
