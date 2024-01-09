@@ -1,7 +1,7 @@
 package ch.sp.stundenplaner.api.module;
 
 import ch.sp.stundenplaner.api.dto.ModuleListDto;
-import ch.sp.stundenplaner.api.mapper.ModuleEntityMapper;
+import com.dk.stundenplaner.mapper.ModuleEntityMapper;
 import com.dk.stundenplaner.entity.ModuleEntity;
 import com.dk.stundenplaner.model.SchoolModule;
 import com.dk.stundenplaner.repository.ModuleRepository;

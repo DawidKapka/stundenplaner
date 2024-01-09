@@ -1,7 +1,7 @@
 package ch.sp.stundenplaner.api.schoolclass;
 
 import ch.sp.stundenplaner.api.dto.ClassListDto;
-import ch.sp.stundenplaner.api.mapper.ClassEntityMapper;
+import com.dk.stundenplaner.mapper.ClassEntityMapper;
 import com.dk.stundenplaner.entity.ClassEntity;
 import com.dk.stundenplaner.entity.ModuleEntity;
 import com.dk.stundenplaner.model.SchoolClass;

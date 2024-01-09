@@ -1,4 +1,4 @@
-package ch.sp.stundenplaner.api.mapper;
+package com.dk.stundenplaner.mapper;
 
 import com.dk.stundenplaner.entity.RoomEntity;
 import com.dk.stundenplaner.model.Room;

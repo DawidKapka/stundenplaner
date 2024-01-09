@@ -1,7 +1,7 @@
 package ch.sp.stundenplaner.api.room;
 
 import ch.sp.stundenplaner.api.dto.RoomListDto;
-import ch.sp.stundenplaner.api.mapper.RoomEntityMapper;
+import com.dk.stundenplaner.mapper.RoomEntityMapper;
 import com.dk.stundenplaner.entity.RoomEntity;
 import com.dk.stundenplaner.model.Room;
 import com.dk.stundenplaner.repository.RoomRepository;

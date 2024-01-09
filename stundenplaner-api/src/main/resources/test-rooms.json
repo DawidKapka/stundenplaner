@@ -1,29 +1,38 @@
 [
   {
-    "name": "E.10"
+    "name": "E.10",
+    "type": "SCHULZIMMER"
   },
   {
-    "name": "E.11"
+    "name": "E.11",
+    "type": "LABORZIMMER"
   },
   {
-    "name": "E.12"
+    "name": "E.12",
+    "type": "SCHULZIMMER"
   },
   {
-    "name": "1.10"
+    "name": "1.10",
+    "type": "SCHULZIMMER"
   },
   {
-    "name": "1.11"
+    "name": "1.11",
+    "type": "LABORZIMMER"
   },
   {
-    "name": "1.12"
+    "name": "1.12",
+    "type": "SCHULZIMMER"
   },
   {
-    "name": "2.10"
+    "name": "2.10",
+    "type": "LABORZIMMER"
   },
   {
-    "name": "2.11"
+    "name": "2.11",
+    "type": "LABORZIMMER"
   },
   {
-    "name": "2.12"
+    "name": "2.12",
+    "type": "LABORZIMMER"
   }
 ]

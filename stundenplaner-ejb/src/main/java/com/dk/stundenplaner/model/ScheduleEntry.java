@@ -14,4 +14,5 @@ public class ScheduleEntry extends AbstractModel {
     private SchoolClass assignedSchoolClass;
     private Weekday weekday;
     private Room room;
+    private int lesson;
 }

@@ -3,10 +3,10 @@ package com.dk.stundenplaner.algorithm;
 import java.util.*;
 
 import com.dk.stundenplaner.algorithm.step.*;
-import com.dk.stundenplaner.algorithm.util.ModuleUtil;
-import com.dk.stundenplaner.algorithm.util.TeacherUtil;
 import com.dk.stundenplaner.model.*;
+import jakarta.enterprise.context.ApplicationScoped;
 
+@ApplicationScoped
 public class AlgorithmRunner {
 
     private final List<SchoolClass> classes;
@@ -28,17 +28,11 @@ public class AlgorithmRunner {
         createCombinationMaps();
     }
 
-    /*
-        1. Get List of all modules
-        2. Get Map of all class candidates for each module
-     */
-
-    public Map<Weekday, List<ScheduleEntry>> run() {
-        final Map<Weekday, List<ScheduleEntry>> schedule = new CreateEmptyScheduleStep().create();
+    public Map<Teacher, List<ScheduleEntry>> run() {
         final Map<Teacher, List<ScheduleEntry>> teacherSchedules = new CreateEmptyTeacherSchedulesStep().create(teachers);
-        final List<SchoolModule> allModules = ModuleUtil.accumulateAllModules(classModulesMap);
-
-        return schedule;
+        final Map<Teacher, List<ScheduleEntry>> teachersWithModules = new AssignModulesToTeachersStep().assign(teacherSchedules, classes, modules);
+        final Map<Teacher, List<ScheduleEntry>> schedulesWithDays = new AssignScheduleToDaysStep().assign(teachersWithModules, classes);
+        return teachersWithModules;
     }
 
     private void createCombinationMaps() {
