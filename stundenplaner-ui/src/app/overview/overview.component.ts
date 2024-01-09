@@ -7,6 +7,7 @@ import {SchoolModules} from "../interfaces/schoolModules";
 import {Room} from "../interfaces/Room";
 import {SchoolClass} from "../interfaces/schoolClass";
 import {Teacher} from "../interfaces/teacher";
+import axios from "axios";
 
 @Component({
   selector: 'app-overview',
@@ -28,7 +29,15 @@ export class OverviewComponent implements OnInit {
   ) { }
 
 
+
   ngOnInit(): void {
+    axios.post('http://localhost:9080/api/v1/module', {modules: this.schoolModules}).then(() => {
+      axios.post('http://localhost:9080/api/v1/class', {classes: this.schoolClasses})
+      axios.post('http://localhost:9080/api/v1/teacher', {teachers: this.teachers})
+      axios.post('http://localhost:9080/api/v1/room', {teachers: this.rooms})
+    }
+  )
   }
+
 
 }
